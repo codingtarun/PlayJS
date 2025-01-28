@@ -1,85 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./assets/bootstrap-5/css/bootstrap.min.css" />
-    <title>Hello, world!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript | Tailwind</title>
+    <link rel="stylesheet" href="./assets/css/app.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+    <div
+      class="h-svh bg-gray-800 flex flex-col align-middle justify-center gap-30"
+    >
+      <h3 class="text-white text-center text-3xl uppercase">Progress Bar</h3>
+      <div class="flex flex-col align-middle justify-between gap-10">
+        <div class="relative">
+          <div class="bg-gray-400 h-1 w-full absolute top-1/2 left-0"></div>
+          <div class="flex gap-30 justify-center font-bold text-2xl">
+            <div
+              class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
+            >
+              <h2>1</h2>
+            </div>
+            <div
+              class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
+            >
+              2
+            </div>
+            <div
+              class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
+            >
+              3
+            </div>
+            <div
+              class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
+            >
+              4
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center align-middle">
+          <button class="bg-blue-950 px-3 py-1 rounded-sm">Previous</button>
+          <button class="bg-yellow-950 px-3 py-1 rounded-sm">Next</button>
         </div>
       </div>
-    </nav>
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="./assets/bootstrap-5/js/bootstrap.bundle.js"></script>
-
+    </div>
+    <div
+      class="h-svh bg-slate-900 flex justify-center align-middle flex-col expand gap-10"
+    >
+      <h3 class="text-white text-center text-4xl uppercase">
+        Expandable Boxes
+      </h3>
+      <div
+        class="flex text-white bg-white mx-3 p-1 h-100 rounded-md shadow-md gap-1 transition-all delay-150 duration-300 ease-in-out expand-box"
+      >
+        <div
+          class="w-1 flex-1 bg-[url('https://picsum.photos/id/1/1200/1200')] bg-cover bg-center rounded-l-md cursor-pointer expand-box__bg"
+        ></div>
+        <div
+          class="flex-1 bg-[url('https://picsum.photos/id/4/1200/1200')] bg-cover bg-center cursor-pointer expand-box__bg"
+        ></div>
+        <div
+          class="flex-1 bg-[url('https://picsum.photos/id/5/1200/1200')] bg-cover bg-center cursor-pointer expand-box__bg"
+        ></div>
+        <div
+          class="flex-1 bg-[url('https://picsum.photos/id/9/1200/1200')] bg-cover bg-center cursor-pointer expand-box__bg"
+        ></div>
+        <div
+          class="flex-1 bg-[url('https://picsum.photos/id/12/1200/1200')] bg-cover bg-center rounded-r-md cursor-pointer expand-box__bg"
+        ></div>
+      </div>
+    </div>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
