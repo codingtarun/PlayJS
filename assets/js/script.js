@@ -1,7 +1,7 @@
 /**
  *
  * ==> JavaScript Key notes :
- * 1. A dynamic , weakly types programming language whcih is compalied at runtime.
+ * 1. A dynamic , weakly types programming language which is compalied at runtime.
  * 2. Aimed to make a webpage more dynamic and interactive.
  * 3. Runs on a webbrowser.
  * 4. Hosted language i.e runs on different envirnment - browsers, server etc.
@@ -124,7 +124,7 @@
  * 1. A block of reuseable code designed to perform a specific task.
  * 2. It can be executed whenever evoked and can be called as many as required times.
  * 3. When compiler reads a function , it doesn't immidietly executes the function. It first stores in into the memory and when the function is invoked , then it executes the function.
- *
+ * 4. Function themselves are Object.
  *
  * Types of function :
  * 1. Function declaration : A function is defined using the function keyword, followed by a name and parentheses.
@@ -146,6 +146,33 @@ function sayHello() {
 
 sayHello();
 
+// 2. Arrow function : A shorter syntax for writing functions, using the '=>' arrow.
+
+const greetMsg = (name) => {
+  console.log("ARROW FUNCTION " + name);
+};
+
+greetMsg("JavaScipt");
+
+// Functions VS methods
+
+/**
+ *
+ * Rest Parameters :
+ * 1. Allows a JS function to accept an indefinate numbers of argument as an array.
+ * 2. This is usefull when we don't know how many arguments a function will receive.
+ * 3. Rest parameter must be the last argument declared in a function.
+ * 4. We can have only one parameter
+ *
+ */
+function restParam(...args) {
+  // combine all input to an array
+  console.log(args);
+}
+
+restParam("Tarun Chauhan");
+restParam("TC", "PC", "YC");
+restParam(1, 2, 3, 4, 5, 6, 7, 8);
 /**
  *
  * Converting DataTypes :
@@ -154,6 +181,69 @@ sayHello();
  * 1. Imlicit Type conversion (Type coercion) : Automatically converts data types when performing operations.
  * 2. Explicit Type conversion (Type casting) : We manually convert data types using specific methods.
  *
+ *
+ *
+ *
+ *
+ */
+
+/**
+ *
+ * Hoisting : A JS mechanism where variables and functions declareations are moved to the top of their scope before code execution.
+ *
+ */
+
+/**
+ *
+ * Function inside a function
+ *
+ */
+
+function abc() {
+  const xyz = function () {
+    // only be used inside this function
+    console.log("Local scopped function");
+  };
+  xyz(); // can't call this outside this function.
+}
+
+abc();
+
+/**
+ *
+ * Callback function :
+ * 1. A function that is passed as an argument to another function and is executed after the completion of that function.
+ * 2. Widely used in asynchronous programming , event handlinh and higher order functions.
+ *
+ *
+ */
+
+function showResult(result) {
+  // a function
+  console.log(result);
+}
+
+function add(cb) {
+  // a function that accepts function as an argument.
+  cb(200);
+}
+
+add(showResult); // Passing a function to another function.
+
+/**
+ *
+ * Bind : The bind() method in JavaScript is used to create a new function with a specific this value and optional preset arguments.
+ * It does not invoke the function immediately but returns a new function that can be called later.
+ *
+ */
+
+/**
+ *
+ * DOM :
+ * 1. Document Object Model is a programming interface that represents an HTML or XML document as a tree structure.
+ * 2. It allows JS to interact with, modify and manipulate webpage dynamically.
+ *
+ * Querying Elements :
  *
  *
  *
@@ -181,9 +271,176 @@ expand.forEach((panel) => {
     panel.classList.remove("flex-1");
   });
 });
+
+// function declaration : Automatically hoisted to the top , no matter where it is declared.
 function removeFlexClasses() {
   expand.forEach((panel) => {
     panel.classList.remove("flex-8");
     panel.classList.add("flex-1");
+  });
+}
+
+// 02. Progress bar
+// Get element by ID.
+const btnPrevious = document.getElementById("btnPrevious");
+const btnNext = document.getElementById("btnNext");
+
+// Function Expression / store a function a variable/constant / in such cases a function is used as an "expression".
+// Also hoisted but not initialized // can't call the function before its declaration.
+const msg = function () {
+  // anonymous function i.e without any name
+  console.log("Another Button cllicked");
+};
+
+// store a function a object .
+const progressBar = {
+  title: "Progress Bar",
+  //A function is called a method when it is stored inside an object.
+  showMsg: function () {
+    console.log("Button Clicked");
+  },
+};
+
+// Add an event listner to the buttons & calling a method.
+btnPrevious.addEventListener("click", progressBar.showMsg);
+btnNext.addEventListener("click", msg);
+
+console.log(typeof progressBar.showMsg); // type function
+
+btnPrevious.addEventListener("mouseover", function () {
+  // using anonymous function directly
+  // use if we don't want this function anywhere else.
+  // If we get an error we'll not be able to see the name of function where error occured.
+  console.log("Button Hover");
+});
+
+btnNext.addEventListener("mouseout", () => {
+  // Arrow function
+  console.log("Mouse Out");
+});
+
+// 03. Tell me a dad joke
+
+/**
+ * JS fetch() :
+ * 1. A JS API which provides a way to make network requests to retrieve resources or send data to a server.
+ * 2. The fetch() api is based on promise(), meaning we can handle asynchronous operations easily with .then() and .catch().
+ *
+ */
+
+const txtDadJoke = document.getElementById("dadJoke");
+const btnTellMeAnother = document.getElementById("tellMeAnother");
+function getJoke() {
+  fetch("https://icanhazdadjoke.com/", {
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => (txtDadJoke.innerHTML = data.joke))
+    .then((error) => console.log("Error: ", error));
+}
+btnTellMeAnother.addEventListener("click", () => {
+  getJoke();
+});
+
+/**
+ * async/await :
+ * 1. Used to handle asynchronous code in a more synchronous and readable manner.
+ * 2. Introduced in ES8/ ECMAScript 2017 to work with promises, but it make asynchronous programming much easier to read and maintain by avoiding nested .then() callbacks.
+ *
+ *
+ */
+
+async function getDadJoke() {
+  // async keyword is used to make a function as asynchronous
+  // when a function is declared async it automatically returns a Promise, regardless of whether the function contains explicit return or not.
+
+  let dataJoke = await fetch("https://icanhazdadjoke.com/", {
+    headers: {
+      Accept: "application/json",
+    },
+  });
+  let data = await dataJoke.json();
+  txtDadJoke.innerHTML = data.joke;
+}
+getDadJoke();
+
+// 04. Key Details
+
+const eventKey = document.getElementById("eventKey");
+const eventKeyCode = document.getElementById("eventKeyCode");
+const eventCode = document.getElementById("eventCode");
+
+window.addEventListener("keydown", (e) => {
+  eventKey.value = e.key;
+  eventKeyCode.value = e.keyCode;
+  eventCode.value = e.code;
+});
+
+// 04. FAQs toggle
+
+const cardToggle = document.querySelectorAll(".cardToggle");
+
+console.log(cardToggle);
+cardToggle.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    let cardBody = toggle.closest(".card").querySelector(".card-body");
+    cardBody.classList.toggle("hidden");
+    if (toggle.classList.contains("fa-caret-square-down")) {
+      toggle.classList.remove("fa-caret-square-down");
+      toggle.classList.add("fa-caret-square-up");
+    } else {
+      toggle.classList.remove("fa-caret-square-up");
+      toggle.classList.add("fa-caret-square-down");
+    }
+  });
+});
+
+// 05. Random Choices
+
+/**
+ * split() : A JS method used to split a string into an array based on the specified seprator.
+ *
+ *
+ * filter() : A JS method which returns an array with the elements that pass a condition given in the callback function.
+ *
+ * trim() : A JS method to remove whitespaces from both ends of the string but doesn't modify the string.
+ *
+ * map() : A JS method to create a new array by applying a function to each element of the original array.
+ */
+const randomInputs = document.getElementById("randomInput");
+const randomChoices = document.getElementById("randomChoices");
+
+randomInputs.addEventListener("keyup", (e) => {
+  createChoices(e.target.value);
+});
+
+function createChoices(input) {
+  // 1.  split the input when user enters ','.
+  const choices = input.split(",");
+  //console.log(choices);
+  // 2. return only those entries which are not empty.
+  const afterFilter = choices.filter((choice) => choice.trim() !== "");
+  //console.log(afterFilter);
+  // 3. Map entire array and remove any whitespaces from the element
+  const finalList = afterFilter.map((a) => a.trim());
+  console.log(finalList);
+
+  // loop through 'finalArray and display them as options'.
+
+  finalList.forEach((choice) => {
+    const option = document.createElement("span");
+    option.classList.add(
+      "bg-orange-400",
+      "px-2",
+      "py-1",
+      "rounded-full",
+      "text-white",
+      "hover:bg-orange-600",
+      "cursor-pointer"
+    );
+    option.innerText = choice;
+    randomChoices.appendChild(option);
   });
 }
