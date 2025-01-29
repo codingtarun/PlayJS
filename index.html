@@ -6,8 +6,139 @@
     <title>JavaScript | Tailwind</title>
     <link rel="stylesheet" href="./assets/css/app.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/fontawesome-5/css/all.css" />
   </head>
   <body>
+    <div
+      class="h-svh bg-fuchsia-500 flex flex-col justify-center items-center gap-10"
+    >
+      <h3 class="text-white uppercase text-2xl text-center">
+        Random Choice Selector
+      </h3>
+      <div>
+        <textarea
+          name="randomInput"
+          id="randomInput"
+          rows="2"
+          class="bg-white w-100 rounded-md border-0 p-2"
+          placeholder="Enter choices here and , to seprate them...."
+        >
+        </textarea>
+      </div>
+      <div class="flex gap-4" id="randomChoices"></div>
+    </div>
+    <div class="h-svh bg-emerald-300 flex flex-col items-center gap-10 py-10">
+      <h3 class="text-white text-2xl font-bold">FAQs</h3>
+      <div class="flex flex-col justify-center items-center w-3/4 gap-2">
+        <div class="bg-gray-100 rounded-xl w-100 flex flex-col card pb-4">
+          <div
+            class="flex justify-between items-center bg-gray-200 py-2 px-3 rounded-t-xl card-heading"
+          >
+            <h3>How to make a responsive navbar?</h3>
+            <i class="fas fa-caret-square-down cardToggle"></i>
+          </div>
+          <div class="p-3 card-body">
+            <p>
+              A responsive navbar in Tailwind uses flex, hidden, and block
+              utilities. Use sm:flex or md:hidden for toggling items. JavaScript
+              can be added for mobile menus using hidden and block classes.
+            </p>
+          </div>
+        </div>
+        <div class="bg-gray-100 rounded-xl w-100 flex flex-col card pb-4">
+          <div
+            class="flex justify-between items-center bg-gray-200 py-2 px-3 rounded-t-xl card-heading"
+          >
+            <h3>How to center a div?</h3>
+            <i class="fas fa-caret-square-down cardToggle"></i>
+          </div>
+          <div class="p-3 card-body">
+            <p>
+              Use flex, items-center, and justify-center on a h-screen
+              container.Alternatively, absolute, top-1/2, and left-1/2 with
+              -translate-x-1/2 work too.
+            </p>
+          </div>
+        </div>
+        <div class="bg-gray-100 rounded-xl w-100 flex flex-col card pb-4">
+          <div
+            class="flex justify-between items-center bg-gray-200 py-2 px-3 rounded-t-xl card-heading"
+          >
+            <h3>How to add hover effects?</h3>
+            <i class="fas fa-caret-square-down cardToggle"></i>
+          </div>
+          <div class="p-3 card-body">
+            <p>
+              Use transition utilities like transition-all duration-300 for
+              smooth effects. Combine with hover: variants, such as
+              hover:bg-blue-500 or hover:scale-110, to change colors, size, or
+              opacity smoothly on hover.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="h-svh bg-gray-100 flex justify-center items-center flex-col gap-10"
+      id="keyDetails"
+    >
+      <h3 class="text-center text-3xl uppercase">Key Details</h3>
+      <div class="w-3/4 p-2 flex">
+        <div class="flex flex-col justify-between items-center">
+          <label for="eventKey" class="text-center">event.key</label>
+          <input
+            type="text"
+            name="eventKey"
+            id="eventKey"
+            value="X"
+            class="text-center bg-white h-10 border-1 border-gray-300"
+            disabled
+          />
+        </div>
+        <div class="flex flex-col justify-between items-center">
+          <label for="eventKeyCode" class="text-center">event.keyCode</label>
+          <input
+            type="text"
+            name="eventKeyCode"
+            id="eventKeyCode"
+            value="X"
+            class="text-center bg-white h-10 border-1 border-gray-300"
+            disabled
+          />
+        </div>
+        <div class="flex flex-col justify-between items-center">
+          <label for="eventCode" class="text-center">event.code</label>
+          <input
+            type="text"
+            name="eventCode"
+            id="eventCode"
+            value="X"
+            class="text-center bg-white h-10 border-1 border-gray-300"
+            disabled
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="h-svh bg-cyan-700 flex flex-col items-center justify-center gap-20"
+    >
+      <h3 class="text-white text-center text-3xl uppercase">
+        Tell me a Dad's Joke
+      </h3>
+      <div
+        class="w-3/4 text-center bg-emerald-500 p-5 rounded-xl shadow-xl flex flex-col justify-center items-center gap-5"
+      >
+        <p class="text-center text-xl text-white min-h-50" id="dadJoke">
+          Loading....
+        </p>
+        <button
+          class="bg-amber-500 text-white px-3 py-1 rounded-md cursor-pointer hover:bg-amber-600"
+          id="tellMeAnother"
+        >
+          Tell Me Another
+        </button>
+      </div>
+    </div>
     <div
       class="h-svh bg-gray-800 flex flex-col align-middle justify-center gap-30"
     >
@@ -15,7 +146,20 @@
       <div class="flex flex-col align-middle justify-between gap-10">
         <div class="relative">
           <div class="bg-gray-400 h-1 w-full absolute top-1/2 left-0"></div>
-          <div class="flex gap-30 justify-center font-bold text-2xl">
+          <blockquote
+            class="text-center text-2xl font-semibold text-gray-900 italic dark:text-white"
+          >
+            When you look
+            <span
+              class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-pink-500"
+            >
+              <span class="relative text-white dark:text-gray-950"
+                >annoyed</span
+              >
+            </span>
+            all the time, people think that you're busy.
+          </blockquote>
+          <div class="flex gap-30 justify-center font-bold text-2xl z-10">
             <div
               class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
             >
@@ -38,9 +182,19 @@
             </div>
           </div>
         </div>
-        <div class="flex justify-center align-middle">
-          <button class="bg-blue-950 px-3 py-1 rounded-sm">Previous</button>
-          <button class="bg-yellow-950 px-3 py-1 rounded-sm">Next</button>
+        <div class="flex justify-center align-middle gap-2">
+          <button
+            class="bg-blue-500 px-3 py-1 rounded-sm text-white cursor-pointer hover:bg-blue-700"
+            id="btnPrevious"
+          >
+            Previous
+          </button>
+          <button
+            class="bg-red-500 px-3 py-1 rounded-sm text-white cursor-pointer hover:bg-red-700"
+            id="btnNext"
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
