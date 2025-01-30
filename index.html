@@ -9,6 +9,53 @@
     <link rel="stylesheet" href="./assets/fontawesome-5/css/all.css" />
   </head>
   <body>
+    <div class="h-svh bg-purple-500 flex justify-center items-center">
+      <div class="flex gap-10 text-white">
+        <div class="text-center">
+          <i class="fab fa-twitter text-4xl"></i>
+          <h2 class="text-5xl counter" data-counter="12000">12000</h2>
+          <small>Twitter Followers</small>
+        </div>
+        <div class="text-center">
+          <i class="fab fa-youtube text-4xl"></i>
+          <h2 class="text-5xl counter" data-counter="5000">5000</h2>
+          <small>YouTube Subscribers</small>
+        </div>
+        <div class="text-center">
+          <i class="fab fa-facebook-square text-4xl"></i>
+          <h2 class="text-5xl counter" data-counter="7500">7500</h2>
+          <small>Facebook Fans</small>
+        </div>
+      </div>
+    </div>
+    <div class="h-svh bg-white relative">
+      <div class="h-1/2 bg-blue-100"></div>
+      <div class="h-1/2 bg-blue-500"></div>
+      <div
+        class="flex gap-5 bg-white absolute top-1/2 left-1/2 w-50% shadow-2xl px-2 py-2 -translate-y-1/2 -translate-x-1/2"
+      >
+        <ul class="gap-2 flex" id="menu_list">
+          <li class="px-2 py-1 hover:cursor-pointer">
+            <a href="#">Home</a>
+          </li>
+          <li class="px-2 py-1 hover:cursor-pointer">
+            <a href="#">Works</a>
+          </li>
+          <li class="px-2 py-1 hover:cursor-pointer">
+            <a href="#">About</a>
+          </li>
+          <li class="px-2 py-1 hover:cursor-pointer">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+        <button
+          class="bg-white px-2 py-1 hover:cursor-pointer"
+          id="menu_toggle"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
     <div
       class="h-svh bg-fuchsia-500 flex flex-col justify-center items-center gap-10"
     >
@@ -16,16 +63,16 @@
         Random Choice Selector
       </h3>
       <div>
-        <textarea
-          name="randomInput"
-          id="randomInput"
+        <input
+          type="text"
+          name="txtOptions"
+          id="txtOptions"
           rows="2"
-          class="bg-white w-100 rounded-md border-0 p-2"
-          placeholder="Enter choices here and , to seprate them...."
-        >
-        </textarea>
+          class="bg-white w-100 rounded-md border-0 p-2 outline-none"
+          placeholder="Enter choices here and `,` to seprate them...."
+        />
       </div>
-      <div class="flex gap-4" id="randomChoices"></div>
+      <div class="flex gap-2" id="listOptions"></div>
     </div>
     <div class="h-svh bg-emerald-300 flex flex-col items-center gap-10 py-10">
       <h3 class="text-white text-2xl font-bold">FAQs</h3>

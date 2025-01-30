@@ -252,6 +252,139 @@ add(showResult); // Passing a function to another function.
 
 /**
  *
+ * Arrays & Iterables :
+ * 1. Iterables : An object that can be looped over using for-of loop.
+ *
+ * Types of iterables :
+ * 1. Arrays.
+ * 2. Strings.
+ * 3. Maps.
+ * 4. Sets.
+ *
+ * What "array like Objects" ?
+ * 1. Objects that have lenght property and use indexes to access items.
+ * 2. Not every "Array like Object" is an Array.Arrays has some etra properties.
+ * 3.
+ *
+ *
+ * Array :
+ * 1. Ordered collection of values, which can be of any type.
+ * 2. Zero based indexing.
+ *
+ *
+ */
+
+const nameList = ["Tarun", "Hope", "Priya"];
+
+console.log(nameList);
+//const numberList = new Array(5); // creates an empty array with lenght 5 instead of an array with '5' as a single value.
+const numberList = new Array(
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  1,
+  1,
+  2,
+  4,
+  23,
+  4242,
+  4324,
+  43
+);
+console.log(numberList);
+
+// Array Methods :
+// Push : Add value to the end
+
+numberList.push(9);
+
+// pop() : Remove the last element
+
+numberList.pop();
+
+// unshift() : Add value to the start
+
+numberList.unshift(9);
+
+// shift() : remove first element.
+
+numberList.shift();
+
+// Splice() : Methods used to add, remove, or replace elements in an array.
+// It modifies the original array and returns an array with removed elements.
+// syntex : array.splice(startIndex, deleteCount, item1, item2,....);
+// If used -index it will start from the last element.
+
+const removedNumberList = numberList.splice(10, 15);
+console.log(removedNumberList);
+
+// slice() : Method used to extract a portion of an array without modifying original array.
+// syntex : array.slice(startIndex,endIndex);
+// -index starts from the end.
+
+const sliceNumberList = numberList.slice(1, 9);
+console.log(sliceNumberList);
+
+// Iterating array
+
+// 1. For loop
+
+for (let i = 0; i < numberList.length; i++) {
+  console.log(numberList[i]);
+}
+
+// 2. forEach() function : Execute a function for each element.
+
+numberList.forEach((num) => {
+  console.log(num * 10);
+});
+
+// 3. for..of loop (best for iterables
+
+for (let num of numberList) {
+  console.log(num * 5);
+}
+
+// 4. map() : Returns a new array as per the function passes.
+
+const newNumberList = numberList.map((num) => (num % 2 !== 0 ? num : ""));
+console.log(newNumberList);
+
+// concat() : Merge two or more arrays into a new array.
+// Doesn't modify the origianl arrays , but retursn a new combined array.
+
+const concatNumberList = removedNumberList.concat(newNumberList);
+console.log(concatNumberList);
+
+// indexOf() : Returns the index of the element passed in the function
+// Returns the index of first matching value.
+// retursn -1 if no item is found.
+
+console.log(concatNumberList.indexOf(1)); // returns the index of first matching element.
+console.log(concatNumberList.lastIndexOf(1)); // returns the index of last matching elements.
+
+// find() : method used to search an array.
+// It returns the first element that satisfied a provided testing function.
+// It stops searching as soon as it finds a match.
+
+const greaterNumber = concatNumberList.find((num, index) => {
+  return num > 20;
+});
+
+console.log(greaterNumber);
+
+console.log(concatNumberList.findIndex((num, index) => num > 25)); // return the index of first item matched element.
+
+/**
+ *
+ *
+ * ***********************************************************************************************************************************************
  * 50 PROJECTS CHALLANGE
  *
  *
@@ -263,7 +396,7 @@ add(showResult); // Passing a function to another function.
 const expand = document.querySelectorAll(".expand-box__bg");
 // returns the node list
 console.log(expand);
-// forEach is a higher order array function which accepts another functionn as an argument.
+// forEach is a higher order array function which accepts another functionn as an argument and return the values as per the function.
 expand.forEach((panel) => {
   panel.addEventListener("click", () => {
     removeFlexClasses();
@@ -286,7 +419,7 @@ const btnPrevious = document.getElementById("btnPrevious");
 const btnNext = document.getElementById("btnNext");
 
 // Function Expression / store a function a variable/constant / in such cases a function is used as an "expression".
-// Also hoisted but not initialized // can't call the function before its declaration.
+// Also hoisted(moved to the top of the script) but not initialized // can't call the function before its declaration.
 const msg = function () {
   // anonymous function i.e without any name
   console.log("Another Button cllicked");
@@ -402,45 +535,155 @@ cardToggle.forEach((toggle) => {
 /**
  * split() : A JS method used to split a string into an array based on the specified seprator.
  *
- *
  * filter() : A JS method which returns an array with the elements that pass a condition given in the callback function.
  *
  * trim() : A JS method to remove whitespaces from both ends of the string but doesn't modify the string.
  *
  * map() : A JS method to create a new array by applying a function to each element of the original array.
+ *
  */
-const randomInputs = document.getElementById("randomInput");
-const randomChoices = document.getElementById("randomChoices");
+const txtOptions = document.getElementById("txtOptions");
+const listOptions = document.getElementById("listOptions");
 
-randomInputs.addEventListener("keyup", (e) => {
-  createChoices(e.target.value);
+txtOptions.addEventListener("keyup", (e) => {
+  // adding an event listner to the textarea
+  createOptions(e.target.value); // Calling a function and passing the input value
+  if (e.key === "Enter") {
+    // setTimeout() : Method used to execute a function after a specified delay.
+    setTimeout(() => {
+      e.target.value = ""; // set the input to ''
+    }, 10);
+    randomSelectOption(); // can function to highlight and select a random element.
+  }
 });
 
-function createChoices(input) {
+function createOptions(input) {
+  // function to perform the desired action
   // 1.  split the input when user enters ','.
-  const choices = input.split(",");
+  const options = input.split(",");
   //console.log(choices);
   // 2. return only those entries which are not empty.
-  const afterFilter = choices.filter((choice) => choice.trim() !== "");
+  const optionsAfterFilter = options.filter((option) => option.trim() !== "");
   //console.log(afterFilter);
   // 3. Map entire array and remove any whitespaces from the element
-  const finalList = afterFilter.map((a) => a.trim());
-  console.log(finalList);
+  const optionsAfterMap = optionsAfterFilter.map((option) => option.trim());
+  console.log(optionsAfterMap);
+  listOptions.innerHTML = "";
 
   // loop through 'finalArray and display them as options'.
 
-  finalList.forEach((choice) => {
-    const option = document.createElement("span");
+  optionsAfterMap.forEach((choice) => {
+    // loop throught each element of the array and performs the desired action.
+    const option = document.createElement("span"); // creating a new 'span' element.
     option.classList.add(
       "bg-orange-400",
       "px-2",
-      "py-1",
       "rounded-full",
       "text-white",
-      "hover:bg-orange-600",
-      "cursor-pointer"
-    );
-    option.innerText = choice;
-    randomChoices.appendChild(option);
+      "cursor-pointer",
+      "options",
+      "min-w-20",
+      "text-center"
+    ); // adding classes to the newly created span element.
+    option.innerText = choice; // Adding text to the newly created span element.
+    listOptions.appendChild(option); // Appending the newly created span element to the 'listOption' div.
   });
 }
+
+// Highlighting and selecting a random option.
+
+/**
+ *
+ * setIntervel() : Runs a function repeatedly with a fixed time interval between each execution.
+ *
+ * syntex : setInterval(()=> { action }, intervel in millisec,args.. )
+ * 1. It returns an ID of the setInterval , which can be used to stop the interval using clearInterval();
+ *
+ */
+
+/**
+ *
+ * setTimeout() : Execute a function once after a specified intervel.
+ *
+ * syntex : setTimeout(() => { action }, interval in ms, argument)
+ * 1. Function will be executed once.
+ *
+ */
+
+const randomSelectOption = () => {
+  const times = 30;
+  // Setting the interval to highlight the options randomly.
+  const intervel = setInterval(() => {
+    // storing the ID to a variable to use later to stop the intervel.
+    const randomTag = pickRandomTag(); // calling a function to pick a random option.
+    highlightTag(randomTag); // highlighting / changing the background color of the selected option.
+    setTimeout(() => {
+      unhighlightTag(randomTag);
+    }, 100);
+  }, 100);
+
+  setTimeout(() => {
+    // outer timeout is stopping the interval after give seconds.
+    clearInterval(intervel); // stopping the setIntervel function.
+    setTimeout(() => {
+      // inner timeout to run the function once to select a random option.
+      const randomTag = pickRandomTag(); // Picking a random tag.
+      highlightTag(randomTag); // highlightin the tag.
+    }, 100);
+  }, times * 100);
+};
+
+function pickRandomTag() {
+  // select all generated options.
+  const tags = document.querySelectorAll(".options");
+  // select a random tag form the tags array.
+  return tags[Math.floor(Math.random() * tags.length)]; // Using Math.random() function.
+}
+
+function highlightTag(tag) {
+  // Add / remove the classes to highlight the option.
+  tag.classList.remove("bg-orange-400");
+  tag.classList.add("bg-emerald-300");
+}
+function unhighlightTag(tag) {
+  // Add / remove the classes to unhighlight the option.
+  tag.classList.remove("bg-emerald-300");
+  tag.classList.add("bg-orange-400");
+}
+
+// 06. Toggle menu
+// get the elements of the menu :
+const menuToggle = document.getElementById("menu_toggle");
+const menuList = document.getElementById("menu_list");
+
+// add event listner to the menuToggle button
+menuToggle.addEventListener("click", () => {
+  menuList.classList.toggle("hidden");
+  if (menuList.classList.contains("hidden")) {
+    menuToggle.innerHTML = "";
+    menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+  } else {
+    menuToggle.innerHTML = "";
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+  }
+});
+
+// 07. Counter app
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach((counter) => {
+  counter.innerHTML = 0;
+  const updateCounter = () => {
+    // A function to update the counter
+    const target = +counter.getAttribute("data-counter"); // A special html feater "date-*" is used to get the target counter value.
+    const incBy = target / 200;
+    const currentCounter = +counter.innerHTML;
+    if (currentCounter < target) {
+      counter.innerHTML = `${Math.ceil(currentCounter + incBy)}`;
+      setTimeout(updateCounter, 1);
+    }
+  };
+
+  updateCounter();
+});
