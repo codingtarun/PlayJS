@@ -9,6 +9,57 @@
     <link rel="stylesheet" href="./assets/fontawesome-5/css/all.css" />
   </head>
   <body>
+    <div class="h-svh bg-indigo-600">
+      <h3 class="text-white text-2xl text-center">Products List</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-6 px-4 relative">
+        <div class="flex flex-col justify-center">
+          <img
+            src="https://loremflickr.com/500/800"
+            class="max-w-full h-auto"
+          />
+          <div
+            class="flex flex-col justify-center align-middle bg-black opacity-80 absolute bottom-0"
+          >
+            <h3>Title</h3>
+            <p>Description</p>
+            <div><button>View</button> <button>Add to cart</button></div>
+          </div>
+        </div>
+        <div>2</div>
+        <div>1</div>
+        <div>2</div>
+        <div>1</div>
+        <div>2</div>
+      </div>
+    </div>
+    <div class="bg-emerald-700">
+      <h3 class="text-center text-white font-bold text-2xl">API fetch</h3>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 p-3"
+        id="user-cards"
+      ></div>
+    </div>
+    <div class="h-svh bg-cyan-300 flex flex-col justify-evenly">
+      <div>
+        <h3 class="text-center text-2xl text-white font-bold">Drink Water</h3>
+        <h5 class="text-center text-white">Your Daily Water intake tracker</h5>
+      </div>
+
+      <div class="flex justify-center">
+        <div
+          class="border-4 w-50 h-100 bg-blue-100 border-black rounded-b-4xl flex flex-col justify-end hover:cursor-pointer"
+          id="bottle"
+        >
+          <div
+            class="w-full rounded-b-3xl bg-blue-500 flex flex-col justify-center text-xl text-white font-bold items-center transition-all duration-900 ease-in-out"
+            id="bottle-inner"
+          >
+            <p id="bottle-amount">250ml</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between gap-3" id="cupBox"></div>
+    </div>
     <div class="h-svh bg-purple-500 flex justify-center items-center">
       <div class="flex gap-10 text-white">
         <div class="text-center">

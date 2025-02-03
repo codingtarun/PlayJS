@@ -182,9 +182,6 @@ restParam(1, 2, 3, 4, 5, 6, 7, 8);
  * 2. Explicit Type conversion (Type casting) : We manually convert data types using specific methods.
  *
  *
- *
- *
- *
  */
 
 /**
@@ -213,7 +210,7 @@ abc();
  *
  * Callback function :
  * 1. A function that is passed as an argument to another function and is executed after the completion of that function.
- * 2. Widely used in asynchronous programming , event handlinh and higher order functions.
+ * 2. Widely used in asynchronous programming , event handling and higher order functions.
  *
  *
  */
@@ -364,7 +361,7 @@ console.log(concatNumberList);
 
 // indexOf() : Returns the index of the element passed in the function
 // Returns the index of first matching value.
-// retursn -1 if no item is found.
+// returns -1 if no item is found.
 
 console.log(concatNumberList.indexOf(1)); // returns the index of first matching element.
 console.log(concatNumberList.lastIndexOf(1)); // returns the index of last matching elements.
@@ -380,6 +377,42 @@ const greaterNumber = concatNumberList.find((num, index) => {
 console.log(greaterNumber);
 
 console.log(concatNumberList.findIndex((num, index) => num > 25)); // return the index of first item matched element.
+
+/**
+ *
+ * Classes & Object Oriented Programming :
+ *
+ */
+
+class Product {
+  // this is Product class i.e a blue print for the product object.
+  // properties are declared below
+  title;
+  description;
+  price;
+  status;
+  constructor(title, description, price, status) {
+    // this is a constructor function and product information will be passed to it when object is created
+    // constructor will assign the values to the variables.
+    this.title = title;
+    this.description = description;
+    this.price = price;
+    this.status = status;
+  }
+
+  discountAmount() {
+    return (this.price * 20) / 100;
+  }
+}
+
+const productList = {
+  products: [
+    new Product("Product A", "This is Product A", 100, "Available"),
+    new Product("Product B", "This is product B", 200, "Out of stock"),
+  ],
+};
+
+console.log(productList);
 
 /**
  *
@@ -574,6 +607,7 @@ function createOptions(input) {
 
   optionsAfterMap.forEach((choice) => {
     // loop throught each element of the array and performs the desired action.
+
     const option = document.createElement("span"); // creating a new 'span' element.
     option.classList.add(
       "bg-orange-400",
@@ -587,6 +621,14 @@ function createOptions(input) {
     ); // adding classes to the newly created span element.
     option.innerText = choice; // Adding text to the newly created span element.
     listOptions.appendChild(option); // Appending the newly created span element to the 'listOption' div.
+    /**
+     * Use appendChild() if adding one element.
+     * Use append() if adding multiple elements or text.
+     * Use prepend() to add elements at the beginning.
+     * Use insertBefore() for precise placement before another element.
+     * Use replaceChild() to replace an existing child.
+     * Use removeChild() or remove() to delete elements.
+     */
   });
 }
 
@@ -676,6 +718,9 @@ counters.forEach((counter) => {
   counter.innerHTML = 0;
   const updateCounter = () => {
     // A function to update the counter
+    // The data-counter attribute is defined in an HTML element.
+    // <h2 class="text-5xl counter" data-counter="5000">5000</h2>
+    // JavaScript's getAttribute("data-counter") retrieves the value of this attribute as a string.
     const target = +counter.getAttribute("data-counter"); // A special html feater "date-*" is used to get the target counter value.
     const incBy = target / 200;
     const currentCounter = +counter.innerHTML;
@@ -687,3 +732,140 @@ counters.forEach((counter) => {
 
   updateCounter();
 });
+
+/**
+ *
+ * 07. Drink Your Water
+ *
+ */
+
+// set all cups
+
+const cupBox = document.getElementById("cupBox");
+const bottle = document.getElementById("bottle-inner");
+const bottleAmount = document.getElementById("bottle-amount");
+
+// Creating the cups using JS createElement function.
+for (let i = 0; i < 8; i++) {
+  // Looping 8 times to create 8 cups.
+  const cup = document.createElement("div");
+  cup.classList.add(
+    "border-4",
+    "w-30",
+    "h-50",
+    "bg-blue-100",
+    "font-bold",
+    "text-center",
+    "border-black",
+    "rounded-b-4xl",
+    "flex",
+    "flex-col",
+    "justify-center",
+    "hover:cursor-pointer",
+    "cup"
+  );
+  cup.innerText = `+250ml`;
+  // Appending to the parent DIV.
+  cupBox.appendChild(cup);
+}
+
+const cups = document.querySelectorAll(".cup"); // Accessing the newly appended child elemnts using querySelectorAll.
+
+cups.forEach((cup, idx) => {
+  console.log(idx);
+  cup.addEventListener("click", () => {
+    console.log(idx);
+    cups.forEach((cup, i) => {
+      if (i <= idx) {
+        cup.classList.remove("bg-blue-100");
+        cup.classList.add("text-white");
+        cup.classList.add("bg-blue-500");
+        cup.classList.add("full");
+      } else {
+        cup.classList.add("bg-blue-100");
+        cup.classList.remove("text-white");
+        cup.classList.remove("bg-blue-500");
+        cup.classList.remove("full");
+      }
+    });
+    fillBottle(idx);
+  });
+});
+
+const fillBottle = (i) => {
+  const totalCups = cups.length;
+  const filledCups = document.querySelectorAll(".full").length;
+  const height = (filledCups / totalCups) * 100;
+  const amount = 250 * (i + 1);
+  bottle.style.height = `${height}%`;
+  bottleAmount.innerText = `${amount}ml`;
+};
+fillBottle(-1);
+
+// 08. Movies info using API fetch
+
+const userCard = document.getElementById("user-cards");
+
+const REACT_APP_API_KEY =
+  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYTU4MzQ0YWJkMTRlN2E3ZDI3MjAwOGJiMzU3YThhYiIsIm5iZiI6MTczNDk0OTI1MC40NjIwMDAxLCJzdWIiOiI2NzY5Mzk4MmM5ZGU5NGQ3MzcwYjA5YzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.dwcVcVn01SihpRYP47D04uWz7T8WzR0Hy7dlUpuhQ5o";
+const IMG_URL = "https://image.tmdb.org/t/p/w500";
+
+const link = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`;
+
+var movies = [];
+
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization: `${REACT_APP_API_KEY}`,
+  },
+};
+
+async function fetchMovies() {
+  const response = await fetch(link, options);
+  const data = await response.json();
+  movies = data.results;
+  console.log(movies);
+
+  movies.forEach((movie) => {
+    userCard.innerHTML += `<div class="group border-1 flex-col relative hover:cursor-pointer">
+          <img
+            src="${IMG_URL + movie.poster_path}"
+            class="max-w-full h-auto"
+          />
+          <div
+            class="absolute bottom-[-10px] opacity-0 px-3 py-2 bg-black text-white w-full group-hover:bottom-0 group-hover:opacity-70 transition-all duration-900"
+          >
+            <div>
+            <div  class="flex justify-between"><h3 class="text-sm">Title : ${
+              movie.original_title
+            }
+    </h3>
+    <span class="text-sm bg-amber-400 rounded-lg text-white px-2">${
+      movie.vote_average
+    }</span></div>
+              
+              <p class="text-xs pb-2">
+                <b>Overview</b> : ${movie.overview}
+              </p>
+            </div>
+            <div class="flex justify-evenly">
+              <button
+                class="bg-green-400 w-full hover:cursor-pointer hover:bg-green-500"
+              >
+                <i class="far fa-eye"></i>
+              </button>
+              <button
+                class="bg-yellow-400 w-full hover:cursor-pointer hover:bg-yellow-500"
+              >
+                <i class="fas fa-user-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>`;
+  });
+}
+fetchMovies();
+
+//Fetch API  using async & await
