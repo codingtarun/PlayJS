@@ -25,7 +25,7 @@
  * ==> Dynamic & Weekly typed language :
  * 1. Dynamic : Not pre-compiled, but is parsed and executed on the fly.
  * 2. Due to its dynamic nature it is able to switch the data types at runtime.
- * 3. Weekily Types : You don't have to tell JS the type of data, it automatically detects the data type.
+ * 3. Weekly Types : You don't have to tell JS the type of data, it automatically detects the data type.
  *
  * ==> JS runs on a host environment :
  * 1. JS engine can be hosted on different environment.
@@ -367,7 +367,7 @@ console.log(concatNumberList.indexOf(1)); // returns the index of first matching
 console.log(concatNumberList.lastIndexOf(1)); // returns the index of last matching elements.
 
 // find() : method used to search an array.
-// It returns the first element that satisfied a provided testing function.
+// It returns the first element that satisfies a provided testing function.
 // It stops searching as soon as it finds a match.
 
 const greaterNumber = concatNumberList.find((num, index) => {
@@ -399,20 +399,130 @@ class Product {
     this.price = price;
     this.status = status;
   }
+}
 
-  discountAmount() {
-    return (this.price * 20) / 100;
+class Cart {
+  product;
+  constructor(product) {
+    this.product = this.product;
   }
 }
 
-const productList = {
-  products: [
+class CartItems {
+  items = [
+    new Cart({
+      productOne: {
+        title: "CART PRODUCT",
+        description: "CART DESCRIPTION",
+        price: 100,
+        status: "Available",
+      },
+    }),
+  ];
+
+  render() {
+    console.log(this.items);
+  }
+}
+
+class ProductCard {
+  // This is Product Card , resposible for handling indivisual product card.
+  // isolated from other cards.
+  constructor(product) {
+    // When this card is initialized it must recieve the product info.
+    this.product = product;
+  }
+  addToCart() {
+    // Add to cart logic here
+    console.log("Adding Product to card");
+    console.log(this.product);
+  }
+  viewProduct() {
+    console.log("View Product");
+    console.log(this.product);
+  }
+  render() {
+    //This method responsible for instanciate , create and return the card.
+    const pCard = document.createElement("div"); // creating a new element.
+    pCard.classList.add(
+      // adding classes to the element
+      "flex",
+      "flex-col",
+      "justify-center",
+      "relative",
+      "group",
+      "overflow-hidden"
+    );
+    // adding inner card structure to newly created elemment.
+    pCard.innerHTML = `
+            <img
+              src="https://loremflickr.com/500/800"
+              class="max-w-full h-auto"
+            />
+            <div
+              class="flex flex-col justify-center align-middle bg-black absolute -bottom-10 opacity-0 w-full text-white px-2 py-3 group-hover:opacity-70 group-hover:bottom-0 transition-all duration-700 ease-in-out"
+            >
+              <h3 class="text-lg">${this.product.title}</h3>
+              <p class="text-sm">${this.product.description}</p>
+              <div class="flex justify-evenly mt-1">
+                <button
+                  class="bg-green-400 w-full p-2 hover:cursor-pointer hover:bg-green-500 view-product"
+                >
+                  View
+                </button>
+                <button
+                  class="bg-yellow-400 w-full p-2 hover:cursor-pointer hover:bg-yellow-500 add-to-cart"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>`;
+    const addToCart = pCard.querySelector(".add-to-cart"); // This will be isolated from other cards.
+    const viewProduct = pCard.querySelector(".view-product"); // Isolated fomr other cards.
+
+    //The bind() method in JavaScript is used to explicitly set the value of 'this' inside a function.
+    //This solves issues where 'this' loses its intended reference, especially in event handlers, callbacks, and object methods assigned to variables.
+
+    //addToCart.addEventListener("click", this.addToCart); // Here 'this' has lost its intended reference , it is now refering to the 'addToCard' button's 'this'.
+    addToCart.addEventListener("click", this.addToCart.bind(this));
+    //'this' now is refering to the 'product' object.
+
+    viewProduct.addEventListener("click", this.viewProduct.bind(this));
+    return pCard; // returning the element.
+  }
+}
+
+class ProductList {
+  // Final class where all of the classes are coming togeather to do stuff.
+  products = [
+    // Creating array , using the Product class.
+    // Passing products information to the class to create objects.
     new Product("Product A", "This is Product A", 100, "Available"),
     new Product("Product B", "This is product B", 200, "Out of stock"),
-  ],
-};
+    new Product("Product C", "This is product C", 200, "Available"),
+  ];
+  productCard;
+  constructor() {
+    // Automatically initialized
+  }
 
-console.log(productList);
+  render() {
+    // Responsible for rendring the final products list.
+    const productBox = document.getElementById("product-box");
+    this.products.forEach((product) => {
+      // looping through the products array.
+      this.productCard = new ProductCard(product);
+      // console.log(this.productCard.render());
+      productBox.append(this.productCard.render());
+    });
+  }
+}
+
+productList = new ProductList();
+productList.render();
+
+cartItems = new CartItems();
+cartItems.render();
 
 /**
  *
@@ -806,7 +916,7 @@ fillBottle(-1);
 
 const userCard = document.getElementById("user-cards");
 
-const REACT_APP_API_KEY =
+const APP_API_KEY =
   "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYTU4MzQ0YWJkMTRlN2E3ZDI3MjAwOGJiMzU3YThhYiIsIm5iZiI6MTczNDk0OTI1MC40NjIwMDAxLCJzdWIiOiI2NzY5Mzk4MmM5ZGU5NGQ3MzcwYjA5YzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.dwcVcVn01SihpRYP47D04uWz7T8WzR0Hy7dlUpuhQ5o";
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
@@ -818,7 +928,7 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: `${REACT_APP_API_KEY}`,
+    Authorization: `${APP_API_KEY}`,
   },
 };
 
@@ -826,8 +936,6 @@ async function fetchMovies() {
   const response = await fetch(link, options);
   const data = await response.json();
   movies = data.results;
-  console.log(movies);
-
   movies.forEach((movie) => {
     userCard.innerHTML += `<div class="group border-1 flex-col relative hover:cursor-pointer">
           <img
