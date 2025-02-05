@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="./assets/fontawesome-5/css/all.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
-<body class="h-svh bg-[url('/assets/images/ubuntu_bg.jpg')] bg-cover bg-center bg-no-repeat text-white">
+<body class="h-svh bg-[url('/assets/images/ubuntu_bg.jpg')] font-[ubuntu] bg-cover bg-center bg-no-repeat text-white overflow-hidden">
 <div class="grid grid-rows-[auto_1fr] h-screen">
     <div class="bg-black opacity-80 flex justify-between px-2">
         <div>Activity</div>
@@ -72,7 +73,7 @@
                         <a href="#" id="icon-game"><img src="./assets/images/game-controller.png" alt="" srcset="" class="h-auto w-full"></a>
                     </li>
                     <li>
-                        <a href="#" id="icon-apps"><img src="./assets/images/app-store.png" alt="" srcset="" class="h-auto w-full"></a>
+                        <a href="#" id="appToggle"><img src="./assets/images/app-store.png" alt="" srcset="" class="h-auto w-full"></a>
                     </li>
 
                 </ul>
@@ -106,33 +107,8 @@
                 <div class="flex flex-col p-4">
                     <div class="py-2 border-b border-b-gray-100">
                         <h3 class="font-bold">Installed Apps</h3>
-                        <div class="flex flex-col p-6">
-                            <ul class="grid grid-cols-5 grid-rows-auto">
-                                <li class="group hover:cursor-pointer opacity-80 hover:opacity-90">
-                                    <div class="flex flex-col justify-between items-center">
-                                        <img src="/assets/images/whatsapp.png" alt="" srcset="" class="h-[80px] w-[80px] object-cover">
-                                        <span>WhatsApp</span>
-                                    </div>
-                                </li>
-                                <li class="group hover:cursor-pointer opacity-80 hover:opacity-90">
-                                    <div class="flex flex-col justify-between items-center">
-                                        <img src="/assets/images/spotify.png" alt="" srcset="" class="h-[80px] w-[80px] object-cover">
-                                        <span>Spotify</span>
-                                    </div>
-                                </li>
-                                <li class="group hover:cursor-pointer opacity-80 hover:opacity-90">
-                                    <div class="flex flex-col justify-between items-center">
-                                        <img src="/assets/images/chrome.png" alt="" srcset="" class="h-[80px] w-[80px] object-cover">
-                                        <span>Chrome</span>
-                                    </div>
-                                </li>
-                                <li class="group hover:cursor-pointer opacity-80 hover:opacity-90">
-                                    <div class="flex flex-col justify-between items-center">
-                                        <img src="/assets/images/firefox.png" alt="" srcset="" class="h-[80px] w-[80px] object-cover">
-                                        <span>Firefox</span>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="flex flex-col p-6" id="ubuntuStartInstalledApps">
+                            <!-- Injecting Installed application list here -->
                         </div>
                     </div>
 
@@ -140,11 +116,75 @@
 
             </div>
             <!-- /Ubuntu Menu Box -->
-            <!-- WhatsApp -->
-            <div>
+            <!-- App store -->
+            <div class="bg-gray-100 hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-3/4 w-3/4 rounded-xl opacity-100" id="appStore">
+                <div class="grid grid-rows-[auto_1fr] h-full w-full">
+                    <div class="bg-gray-300 py-1 px-2 hover:cursor-grab flex justify-between items-center">
+                        <div><h3 class="text-gray-700 font-semibold">App Store</h3></div>
+                        <div class="flex justify-between items-center border-2 bg-white border-gray-400">
+                            <label for="searchAppStore" class="w-10 text-gray-500 flex justify-center"><i class="fas fa-search"></i></label>
+                            <input type="text" name="searchAppStore" id="searchAppStore" class="flex-1 bg-transparent outline-none px-2 text-gray-900">
+                        </div>
+                        <div class="flex justify-between items-center gap-3">
+                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMinimize"><i class="text-xs fas fa-window-minimize"></i></button>
+                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMaximize"><i class="text-xs far fa-window-maximize"></i></button>
+                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreClose"><i class="text-xs fas fa-times-circle"></i></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 flex h-[100%]">
+                            <aside class="md:flex-2 lg:flex-1 border-1 border-r-gray-400">
+                                <ul class="flex flex-col justify-between items-center gap-4 py-2 ">
+                                    <li class="last:mt-auto">
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-compass"></i>
+                                            <p class="text-xs">Explore</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-paper-plane"></i>
+                                            <p class="text-xs">Productivity</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-gamepad"></i>
+                                            <p class="text-xs">Games</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-palette"></i>
+                                            <p class="text-xs text-center">Art & Design</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="2xl fas fa-th"></i>
+                                            <p class="text-xs">Manager</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-cog"></i>
+                                            <p class="text-xs">Settings</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </aside>
+                            <div class="md:flex-10 lg:flex-11 grid grid-rows-[3fr_9fr] p-4 gap-4 h-100">
+                                <div class="flex justify-center items-center rounded-2xl bg-gradient-to-r from-[#77216F] via-[#BB3B0E] to-[#E95420] text-white">
+                                    Our Top Apps
+                                </div>
+                                <div id="ubuntuAppsList" class="overflow-y-scroll h-full">
 
+                                    <!-- Injecting the Apps list here using JS-->
+                                </div>
+                            </div>
+                    </div>
+                </div>
             </div>
-            <!-- /Whatsapp -->
+            <!-- /App store-->
         </div>
     </div>
 </div>
