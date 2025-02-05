@@ -1,10 +1,10 @@
 /**
  *
  * ==> JavaScript Key notes :
- * 1. A dynamic , weakly types programming language which is compalied at runtime.
+ * 1. A dynamic , weakly types programming language which is complied at runtime.
  * 2. Aimed to make a webpage more dynamic and interactive.
- * 3. Runs on a webbrowser.
- * 4. Hosted language i.e runs on different envirnment - browsers, server etc.
+ * 3. Runs on a web browser.
+ * 4. Hosted language i.e. runs on different envirnment - browsers, server etc.
  * 5. It is made to manupulate the HTML,CSS and can send HTTP request in the backbground etc.
  * 6. Not able to access the local files of the host machine.
  * 7. It doesn't directly interacts with the OS, but the browser provied it an environment to run on it.
