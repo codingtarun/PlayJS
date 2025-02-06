@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript | Tailwind</title>
@@ -9,351 +9,253 @@
     <link rel="stylesheet" href="./assets/fontawesome-5/css/all.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body
-    class="font-[Poppins] bg-gradient-to-t from-[#72afd3] to-[#37ecba] h-screen"
-  >
-    <!---Main Nav-->
-    <div class="w-full bg-transparent flex">MANCA</div>
-    <!---/Main Nav-->
-
-    <div class="h-svh bg-transparent">
-      <h3 class="text-white text-2xl text-center">Products List</h3>
-
-      <div class="flex p-2">
-        <div
-          class="flex-8 grid grid-cols-2 gap-1 sm:grid-cols-3 xl:grid-cols-6 px-4"
-          id="product-box"
-        ></div>
-        <div class="flex flex-col flex-2" id="cart">
-          <div
-            class="flex border-1 border-gray-600 p-1 bg-gray-400 gap-0.5 rounded-sm"
-          >
-            <img
-              src="https://loremflickr.com/50/50"
-              class="max-w-full h-auto flex-2"
-            />
-            <div class="text-sm flex-8">
-              <h3 class="text-bold">Product One</h3>
-              <div class="flex justify-items-stretch gap-0.5">
-                <input
-                  type="number"
-                  min="0"
-                  id=""
-                  value="1"
-                  class="bg-white outline-0 max-w-20 rounded"
-                />
-              </div>
-              <div class="flex justify-evenly mt-2">
-                <button
-                  class="bg-green-300 w-full hover:bg-green-500 hover:cursor-pointer"
-                >
-                  <i class="fas fa-bookmark"></i></button
-                ><button
-                  class="bg-red-300 w-full hover:bg-red-500 hover:cursor-pointer"
-                >
-                  <i class="fas fa-trash"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-emerald-700">
-      <h3 class="text-center text-white font-bold text-2xl">API fetch</h3>
-      <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 p-3"
-        id="user-cards"
-      ></div>
-    </div>
-    <div class="h-svh bg-cyan-300 flex flex-col justify-evenly">
-      <div>
-        <h3 class="text-center text-2xl text-white font-bold">Drink Water</h3>
-        <h5 class="text-center text-white">Your Daily Water intake tracker</h5>
-      </div>
-
-      <div class="flex justify-center">
-        <div
-          class="border-4 w-50 h-100 bg-blue-100 border-black rounded-b-4xl flex flex-col justify-end hover:cursor-pointer"
-          id="bottle"
-        >
-          <div
-            class="w-full rounded-b-3xl bg-blue-500 flex flex-col justify-center text-xl text-white font-bold items-center transition-all duration-900 ease-in-out"
-            id="bottle-inner"
-          >
-            <p id="bottle-amount">250ml</p>
-          </div>
-        </div>
-      </div>
-      <div class="flex justify-between gap-3" id="cupBox"></div>
-    </div>
-    <div class="h-svh bg-purple-500 flex justify-center items-center">
-      <div class="flex gap-10 text-white">
-        <div class="text-center">
-          <i class="fab fa-twitter text-4xl"></i>
-          <h2 class="text-5xl counter" data-counter="12000">12000</h2>
-          <small>Twitter Followers</small>
-        </div>
-        <div class="text-center">
-          <i class="fab fa-youtube text-4xl"></i>
-          <h2 class="text-5xl counter" data-counter="5000">5000</h2>
-          <small>YouTube Subscribers</small>
-        </div>
-        <div class="text-center">
-          <i class="fab fa-facebook-square text-4xl"></i>
-          <h2 class="text-5xl counter" data-counter="7500">7500</h2>
-          <small>Facebook Fans</small>
-        </div>
-      </div>
-    </div>
-    <div class="h-svh bg-white relative">
-      <div class="h-1/2 bg-blue-100"></div>
-      <div class="h-1/2 bg-blue-500"></div>
-      <div
-        class="flex gap-5 bg-white absolute top-1/2 left-1/2 w-50% shadow-2xl px-2 py-2 -translate-y-1/2 -translate-x-1/2"
-      >
-        <ul class="gap-2 flex" id="menu_list">
-          <li class="px-2 py-1 hover:cursor-pointer">
-            <a href="#">Home</a>
-          </li>
-          <li class="px-2 py-1 hover:cursor-pointer">
-            <a href="#">Works</a>
-          </li>
-          <li class="px-2 py-1 hover:cursor-pointer">
-            <a href="#">About</a>
-          </li>
-          <li class="px-2 py-1 hover:cursor-pointer">
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-        <button
-          class="bg-white px-2 py-1 hover:cursor-pointer"
-          id="menu_toggle"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-    <div
-      class="h-svh bg-fuchsia-500 flex flex-col justify-center items-center gap-10"
-    >
-      <h3 class="text-white uppercase text-2xl text-center">
-        Random Choice Selector
-      </h3>
-      <div>
-        <input
-          type="text"
-          name="txtOptions"
-          id="txtOptions"
-          rows="2"
-          class="bg-white w-100 rounded-md border-0 p-2 outline-none"
-          placeholder="Enter choices here and `,` to seprate them...."
-        />
-      </div>
-      <div class="flex gap-2" id="listOptions"></div>
-    </div>
-    <div class="h-svh bg-emerald-300 flex flex-col items-center gap-10 py-10">
-      <h3 class="text-white text-2xl font-bold">FAQs</h3>
-      <div class="flex flex-col justify-center items-center w-3/4 gap-2">
-        <div class="bg-gray-100 rounded-xl w-100 flex flex-col card pb-4">
-          <div
-            class="flex justify-between items-center bg-gray-200 py-2 px-3 rounded-t-xl card-heading"
-          >
-            <h3>How to make a responsive navbar?</h3>
-            <i class="fas fa-caret-square-down cardToggle"></i>
-          </div>
-          <div class="p-3 card-body">
-            <p>
-              A responsive navbar in Tailwind uses flex, hidden, and block
-              utilities. Use sm:flex or md:hidden for toggling items. JavaScript
-              can be added for mobile menus using hidden and block classes.
-            </p>
-          </div>
-        </div>
-        <div class="bg-gray-100 rounded-xl w-100 flex flex-col card pb-4">
-          <div
-            class="flex justify-between items-center bg-gray-200 py-2 px-3 rounded-t-xl card-heading"
-          >
-            <h3>How to center a div?</h3>
-            <i class="fas fa-caret-square-down cardToggle"></i>
-          </div>
-          <div class="p-3 card-body">
-            <p>
-              Use flex, items-center, and justify-center on a h-screen
-              container.Alternatively, absolute, top-1/2, and left-1/2 with
-              -translate-x-1/2 work too.
-            </p>
-          </div>
-        </div>
-        <div class="bg-gray-100 rounded-xl w-100 flex flex-col card pb-4">
-          <div
-            class="flex justify-between items-center bg-gray-200 py-2 px-3 rounded-t-xl card-heading"
-          >
-            <h3>How to add hover effects?</h3>
-            <i class="fas fa-caret-square-down cardToggle"></i>
-          </div>
-          <div class="p-3 card-body">
-            <p>
-              Use transition utilities like transition-all duration-300 for
-              smooth effects. Combine with hover: variants, such as
-              hover:bg-blue-500 or hover:scale-110, to change colors, size, or
-              opacity smoothly on hover.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="h-svh bg-gray-100 flex justify-center items-center flex-col gap-10"
-      id="keyDetails"
-    >
-      <h3 class="text-center text-3xl uppercase">Key Details</h3>
-      <div class="w-3/4 p-2 flex">
-        <div class="flex flex-col justify-between items-center">
-          <label for="eventKey" class="text-center">event.key</label>
-          <input
-            type="text"
-            name="eventKey"
-            id="eventKey"
-            value="X"
-            class="text-center bg-white h-10 border-1 border-gray-300"
-            disabled
-          />
-        </div>
-        <div class="flex flex-col justify-between items-center">
-          <label for="eventKeyCode" class="text-center">event.keyCode</label>
-          <input
-            type="text"
-            name="eventKeyCode"
-            id="eventKeyCode"
-            value="X"
-            class="text-center bg-white h-10 border-1 border-gray-300"
-            disabled
-          />
-        </div>
-        <div class="flex flex-col justify-between items-center">
-          <label for="eventCode" class="text-center">event.code</label>
-          <input
-            type="text"
-            name="eventCode"
-            id="eventCode"
-            value="X"
-            class="text-center bg-white h-10 border-1 border-gray-300"
-            disabled
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="h-svh bg-cyan-700 flex flex-col items-center justify-center gap-20"
-    >
-      <h3 class="text-white text-center text-3xl uppercase">
-        Tell me a Dad's Joke
-      </h3>
-      <div
-        class="w-3/4 text-center bg-emerald-500 p-5 rounded-xl shadow-xl flex flex-col justify-center items-center gap-5"
-      >
-        <p class="text-center text-xl text-white min-h-50" id="dadJoke">
-          Loading....
-        </p>
-        <button
-          class="bg-amber-500 text-white px-3 py-1 rounded-md cursor-pointer hover:bg-amber-600"
-          id="tellMeAnother"
-        >
-          Tell Me Another
-        </button>
-      </div>
-    </div>
-    <div
-      class="h-svh bg-gray-800 flex flex-col align-middle justify-center gap-30"
-    >
-      <h3 class="text-white text-center text-3xl uppercase">Progress Bar</h3>
-      <div class="flex flex-col align-middle justify-between gap-10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body class="h-svh bg-[url('/assets/images/ubuntu_bg.jpg')] font-[ubuntu] bg-cover bg-center bg-no-repeat text-white overflow-hidden">
+<div class="grid grid-rows-[auto_1fr] h-screen">
+    <div class="bg-black opacity-80 flex justify-between px-2">
+        <div>Activity</div>
+        <div id="date_time"></div>
         <div class="relative">
-          <div class="bg-gray-400 h-1 w-full absolute top-1/2 left-0"></div>
-          <blockquote
-            class="text-center text-2xl font-semibold text-gray-900 italic dark:text-white"
-          >
-            When you look
-            <span
-              class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-pink-500"
-            >
-              <span class="relative text-white dark:text-gray-950"
-                >annoyed</span
-              >
-            </span>
-            all the time, people think that you're busy.
-          </blockquote>
-          <div class="flex gap-30 justify-center font-bold text-2xl z-10">
-            <div
-              class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
-            >
-              <h2>1</h2>
-            </div>
-            <div
-              class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
-            >
-              2
-            </div>
-            <div
-              class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
-            >
-              3
-            </div>
-            <div
-              class="rounded-full bg-white border-3 border-gray-400 h-20 w-20 flex justify-center items-center"
-            >
-              4
-            </div>
-          </div>
+            <ul class="flex gap-4 justify-evenly">
+                <li class="group relative">
+                    <a href=""><i class="fas fa-network-wired"></i></a>
+                    <div class="absolute bottom-6 right-0 h-36 -z-10 w-36 opacity-0 transition-all duration-100 ease-in-out bg-[#333333] group-hover:opacity-90 group-hover:-bottom-36 group-hover:z-10">
+                        N/W Menu
+                    </div>
+                </li>
+                <li class="group relative">
+                    <a href=""><i class="fas fa-volume-down"></i></a>
+                    <div class="absolute bottom-6 right-0 h-36 -z-10 w-36 opacity-0 transition-all duration-300 ease-in-out bg-[#333333] group-hover:opacity-90 group-hover:-bottom-36 group-hover:z-10">
+                        Volume Menu
+                    </div>
+                </li>
+                <li class="group relative">
+                    <a href=""><i class="fas fa-battery-three-quarters"></i></a>
+                    <div class="absolute bottom-6 right-0 h-36 -z-10 w-36 opacity-0 transition-all duration-300 ease-in-out bg-[#333333] group-hover:opacity-90 group-hover:-bottom-36 group-hover:z-10">
+                        Battery Menu
+                    </div>
+                </li>
+                <li class="group relative">
+                    <a href=""><i class="fas fa-caret-down"></i></a>
+                    <div class="absolute bottom-6 right-0 h-36 -z-10 w-36 opacity-0 transition-all duration-300 ease-in-out bg-[#333333] group-hover:opacity-90 group-hover:-bottom-36 group-hover:z-10">
+                        Caret Down
+                    </div>
+                </li>
+            </ul>
+
+<!--            <div class="absolute -bottom-40 right-30 h-36 w-36 bg-[#333333]">-->
+<!--                Volume Menu-->
+<!--            </div>-->
+<!--            <div class="absolute -bottom-40 right-20 h-36 w-36 bg-[#333333]">-->
+<!--                Battery Menu-->
+<!--            </div>-->
+<!--            <div class="absolute -bottom-40 right-10 h-36 w-36 bg-[#333333]">-->
+<!--                System Menu & Power Options-->
+<!--            </div>-->
         </div>
-        <div class="flex justify-center align-middle gap-2">
-          <button
-            class="bg-blue-500 px-3 py-1 rounded-sm text-white cursor-pointer hover:bg-blue-700"
-            id="btnPrevious"
-          >
-            Previous
-          </button>
-          <button
-            class="bg-red-500 px-3 py-1 rounded-sm text-white cursor-pointer hover:bg-red-700"
-            id="btnNext"
-          >
-            Next
-          </button>
+    </div>
+    <div class="grid grid-cols-[12%_88%] sm:grid-cols-[8%_92%] md:grid-cols-[6%_94%] lg:grid-cols-[4%_96%]">
+        <div class="bg-[rgba(0,0,0,0.4)] px-2 py-4 flex flex-col justify-between">
+            <div>
+                <ul class="flex flex-col gap-3" id="sidebarAppList">
+                    <li>
+                        <a href="#" class="group flex justify-center text-red" id="startUbuntu"> <img src="./assets/images/ubuntu.png" alt="" srcset="" class="group-hover:scale-95"> </a>
+                    </li>
+                    <li>
+                        <a href="#" id="icon-whatsapp"><img src="./assets/images/whatsapp.png" alt="" srcset="" class="h-auto w-full"></a>
+                    </li>
+                    <li>
+                        <a href="#" id="icon-game"><img src="./assets/images/game-controller.png" alt="" srcset="" class="h-auto w-full"></a>
+                    </li>
+                    <li>
+                        <a href="#" id="appToggle"><img src="./assets/images/app-store.png" alt="" srcset="" class="h-auto w-full"></a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li class="">
+                        <a href="#" class="group flex justify-center text-red" id="recycleUbuntu"> <img src="./assets/images/recycle.png" alt="" srcset="" class="group-hover:scale-95"> </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
+        <div class="relative h-full w-full">
+            <div class="h-1/2 w-1/2 bg-[rgba(0,0,0,0.4)] absolute top-[90px] left-[10px] opacity-0 transition-all duration-500 ease-in-out" id="group-game">
+                <h3 class="bg-black text-white font-bold text-center">Games</h3>
+                <div>BODY</div>
+            </div>
+            <!-- Ubuntu Menu Box -->
+            <div class="h-1 w-1 bg-[rgba(0,0,0,0.5)] border-1 border-black outline-8 outline-[rgba(0,0,0,0.3)] rounded-br-2xl absolute top-4 left-4 -z-10 transition-all duration-300 ease-in-out opacity-0 overflow-y-scroll" id="ubuntuMenuBox">
+                <div class="flex p-4 items-center w-full h-10 rounded-md bg-transparent border-2 border-white">
+                    <!-- Icon with fixed width -->
+                    <label for="searchUbuntu" class="w-10 text-gray-500 flex justify-center">
+                        <i class="fas fa-search"></i>
+                    </label>
+
+                    <!-- Input field taking remaining space -->
+                    <input type="text" name="searchUbuntu" id="searchUbuntu"
+                           class="flex-1 bg-transparent outline-none px-2"
+                           placeholder="Search Applications..."/>
+                </div>
+                <div class="flex flex-col p-4">
+                    <div class="py-2 border-b border-b-gray-100">
+                        <h3 class="font-bold">Installed Apps</h3>
+                        <div class="flex flex-col p-6" id="ubuntuStartInstalledApps">
+                            <!-- Injecting Installed application list here -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /Ubuntu Menu Box -->
+            <!-- App store -->
+            <div class="bg-gray-100  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-3/4 w-3/4 rounded-xl" id="appStore" draggable="true">
+                <div class="grid grid-rows-[auto_minmax(0,2fr)] h-full w-full">
+                    <div class="bg-gray-300 py-1 px-2 hover:cursor-grab flex justify-between items-center">
+                        <div><h3 class="text-gray-700 font-semibold">App Store</h3></div>
+                        <div class="flex justify-between items-center border-2 bg-white border-gray-400">
+                            <label for="searchAppStore" class="w-10 text-gray-500 flex justify-center"><i class="fas fa-search"></i></label>
+                            <input type="text" name="searchAppStore" id="searchAppStore" class="flex-1 bg-transparent outline-none px-2 text-gray-900">
+                        </div>
+                        <div class="flex justify-between items-center gap-3">
+                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMinimize"><i class="text-xs fas fa-window-minimize"></i></button>
+                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMaximize"><i class="text-xs far fa-window-maximize"></i></button>
+                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreClose"><i class="text-xs fas fa-times-circle"></i></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 flex h-full">
+                            <aside class="md:flex-2 lg:flex-1 border-1 border-r-gray-400">
+                                <ul class="flex flex-col justify-between items-center gap-4 py-2 ">
+                                    <li class="last:mt-auto">
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-compass"></i>
+                                            <p class="text-xs">Explore</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-paper-plane"></i>
+                                            <p class="text-xs">Productivity</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-gamepad"></i>
+                                            <p class="text-xs">Games</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-palette"></i>
+                                            <p class="text-xs text-center">Art & Design</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="2xl fas fa-th"></i>
+                                            <p class="text-xs">Manager</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                            <i class="text-2xl fas fa-cog"></i>
+                                            <p class="text-xs">Settings</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </aside>
+                            <div class="md:flex-10 lg:flex-11 grid grid-rows-[3fr_9fr] p-4 gap-4 h-full">
+                                <div class="relative flex justify-center items-center rounded-2xl bg-gradient-to-r from-[#77216F] via-[#BB3B0E] to-[#E95420] text-white overflow-hidden">
+                                    <div class="flex w-full h-full transition-transform duration-300 ease-in" id="appStoreSlider">
+                                        <div class="w-full flex-shrink-0 flex justify-evenly items-center px-10">
+                                            <h2 class="capitalize flex-5 text-3xl">Development Tools</h2>
+                                            <div class="flex-7">
+                                                <ul class="flex justify-center items-center gap-5">
+                                                    <li>
+                                                        <img src="./assets/images/vscode.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                    <li>
+                                                        <img src="./assets/images/webstorm.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                    <li>
+                                                        <img src="./assets/images/postman.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="w-full flex-shrink-0 flex justify-evenly items-center px-10">
+                                            <h2 class="capitalize flex-5 text-3xl">Graphics & Design</h2>
+                                            <div class="flex-7">
+                                                <ul class="flex justify-center items-center gap-5">
+                                                    <li>
+                                                        <img src="./assets/images/gimp.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                    <li>
+                                                        <img src="./assets/images/inkscape.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                    <li>
+                                                        <img src="./assets/images/blender.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="w-full flex-shrink-0 flex justify-evenly items-center px-10">
+                                            <h2 class="capitalize flex-5 text-3xl">Productivity & Office</h2>
+                                            <div class="flex-7">
+                                                <ul class="flex justify-center items-center gap-5">
+                                                    <li>
+                                                        <img src="./assets/images/libraoffice.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                    <li>
+                                                        <img src="./assets/images/notion.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                    <li>
+                                                        <img src="./assets/images/thunderbird.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="w-full flex-shrink-0 flex justify-evenly items-center px-10">
+                                            <h2 class="capitalize flex-5 text-3xl">Media & Entertainment</h2>
+                                            <div class="flex-7">
+                                                <ul class="flex justify-center items-center gap-5">
+                                                    <li>
+                                                        <img src="./assets/images/vlc.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                    <li>
+                                                        <img src="./assets/images/spotify.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                    <li>
+                                                        <img src="./assets/images/obs-studio.png" alt="" srcset="" class="h-20 w-20">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="absolute top-1/2 left-5 transform -translate-y-1/2 hover:cursor-pointer z-10" id="btnPrevious"><i class="fas fa-chevron-left"></i></button>
+                                    <button class="absolute top-1/2 right-5 transform -translate-y-1/2 hover:cursor-pointer z-10" id="btnNext" ><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                                <div id="ubuntuAppsList" class="overflow-y-scroll h-full">
+
+                                    <!-- Injecting the Apps list here using JS-->
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /App store-->
+        </div>
     </div>
-    <div
-      class="h-svh bg-slate-900 flex justify-center align-middle flex-col expand gap-10"
-    >
-      <h3 class="text-white text-center text-4xl uppercase">
-        Expandable Boxes
-      </h3>
-      <div
-        class="flex text-white bg-white mx-3 p-1 h-100 rounded-md shadow-md gap-1 transition-all delay-150 duration-300 ease-in-out expand-box"
-      >
-        <div
-          class="w-1 flex-1 bg-[url('https://picsum.photos/id/1/1200/1200')] bg-cover bg-center rounded-l-md cursor-pointer expand-box__bg"
-        ></div>
-        <div
-          class="flex-1 bg-[url('https://picsum.photos/id/4/1200/1200')] bg-cover bg-center cursor-pointer expand-box__bg"
-        ></div>
-        <div
-          class="flex-1 bg-[url('https://picsum.photos/id/5/1200/1200')] bg-cover bg-center cursor-pointer expand-box__bg"
-        ></div>
-        <div
-          class="flex-1 bg-[url('https://picsum.photos/id/9/1200/1200')] bg-cover bg-center cursor-pointer expand-box__bg"
-        ></div>
-        <div
-          class="flex-1 bg-[url('https://picsum.photos/id/12/1200/1200')] bg-cover bg-center rounded-r-md cursor-pointer expand-box__bg"
-        ></div>
-      </div>
-    </div>
-    <script src="./assets/js/script.js"></script>
-  </body>
+</div>
+<!-- Scripts-->
+<script src="./assets/js/ubuntu.js"></script>
+</body>
+</html>
 </html>
