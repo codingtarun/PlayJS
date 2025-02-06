@@ -214,7 +214,7 @@ class AppsList extends CreateComponent{
             app.installed && app.status ?
             installedAppsList.innerHTML += `<li class="group hover:cursor-pointer opacity-80 hover:opacity-90">
                                     <div class="flex flex-col justify-between items-center">
-                                        <img src="/assets/images/${app.image}" alt="" srcset="" class="h-[80px] w-[80px] object-cover">
+                                        <img src="./assets/images/${app.image}" alt="" srcset="" class="h-[80px] w-[80px] object-cover">
                                         <span>${app.title}</span>
                                     </div>
                                 </li>`
