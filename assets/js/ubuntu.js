@@ -197,7 +197,7 @@ class AppCard extends CreateComponent{
 // AppsList class : Responsible to hold all data and rending the Apps related lists.
 class AppsList extends CreateComponent{
     apps = [
-        new AppBlueprint('WhatsAppBlueprint','Meta','https://www.whatsapp.com/','A messaging app that allows users to send text, voice, video calls, and files. The desktop version syncs with the mobile app for seamless communication.',true,false,4.5,'whatsapp.png'),
+        new AppBlueprint('WhatsApp','Meta','https://www.whatsapp.com/','A messaging app that allows users to send text, voice, video calls, and files. The desktop version syncs with the mobile app for seamless communication.',true,false,4.5,'whatsapp.png'),
         new AppBlueprint('Spotify','Spotify Technology S.A.','https://www.spotify.com/',' A leading music streaming service offering millions of songs, podcasts, and playlists with both free and premium options.',true,true,4.5,'spotify.png'),
         new AppBlueprint('Firefox','Mozilla Foundation','https://www.mozilla.org/firefox/',' A privacy-focused, open-source web browser known for speed, security, and customization with a wide range of add-ons.',true,false,4.5,'firefox.png'),
         new AppBlueprint('Google Chrome','Google LLC','https://www.google.com/chrome/','A fast, user-friendly web browser offering seamless synchronization with Google services and a vast library of extensions.',true,true,5, 'chrome.png'),
