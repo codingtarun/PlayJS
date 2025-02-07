@@ -24,102 +24,107 @@ class CreateComponent{
 
 // END :: Base functionality classes which can be extended where every required
 
+// START :: Navbar
+class Navbar{
+    constructor() {
+    }
+    renderNavbarDateTime(){
+        const dateTime = document.getElementById('date_time');
+        function dispDateTime(){
+            const now = new Date().toLocaleString('en-US',  {timeZone: 'Asia/Kolkata'});
+            const date = new Date(now);
+            const month = date.toLocaleString('en-US', {month: 'short'});
+            const day = date.getDate().toString().padStart(2,'0');
+            const hours = date.getHours().toString().padStart(2,'0');
+            const minutes = date.getMinutes().toString().padStart(2,'0');
+            return `${month} ${day} ${hours}:${minutes}`;
+        }
 
-// Navbar : Date & Time
-const dateTime = document.getElementById('date_time');
-function dispDateTime(){
-    const now = new Date().toLocaleString('en-US',  {timeZone: 'Asia/Kolkata'});
-    const date = new Date(now);
-    const month = date.toLocaleString('en-US', {month: 'short'});
-    const day = date.getDate().toString().padStart(2,'0');
-    const hours = date.getHours().toString().padStart(2,'0');
-    const minutes = date.getMinutes().toString().padStart(2,'0');
-    return `${month} ${day} ${hours}:${minutes}`;
+        dateTime.innerText = dispDateTime(); // Initial date & time
+        // Update Date & Time every minutes
+        setInterval(() => {
+            dateTime.innerText = dispDateTime();
+        }, 10000);
+    }
+    render(){
+        this.renderNavbarDateTime();
+    }
 }
 
-dateTime.innerText = dispDateTime(); // Initial date & time
-// Update Date & Time every minutes
+// END :: Navbar
 
-setInterval(() => {
-    dateTime.innerText = dispDateTime();
-}, 10000);
 
-// Sidebar : Games
-const iconGame = document.getElementById('icon-game');
-const groupGame = document.getElementById('group-game');
-iconGame.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log("games clicked");
-    if(groupGame.classList.contains('opacity-0')){
-        groupGame.classList.remove('opacity-0');
-        groupGame.classList.add('opacity-100');
-    }else{
-        groupGame.classList.remove('opacity-100');
-        groupGame.classList.add('opacity-0');
+// START :: Sidebar
+
+class Sidebar{
+    constructor() {
+        this.appToggle = document.getElementById('appToggle');
+        this.appStore = document.getElementById('appStore');
+        this.btnAppStoreMinimize = document.getElementById('btnAppStoreMinimize');
+        this.btnAppStoreMaximize = document.getElementById('btnAppStoreMaximize');
+        this.btnAppStoreClose = document.getElementById('btnAppStoreClose');
+        this.iconGame = document.getElementById('icon-game');
+        this.groupGame = document.getElementById('group-game');
+        this.startUbuntu = document.getElementById('startUbuntu');
+        this.ubuntuMenuBox = document.getElementById('ubuntuMenuBox');
     }
-});
+    renderSidebar(){
 
-
-// Start Ubuntu
-
-const startUbuntu = document.getElementById('startUbuntu');
-const ubuntuMenuBox = document.getElementById('ubuntuMenuBox');
-startUbuntu.addEventListener('click', (e) => {
-    e.preventDefault();
-    if(ubuntuMenuBox.classList.contains('opacity-0')){
-        ubuntuMenuBox.classList.remove('opacity-0','h-1','w-1','-z-10');
-        ubuntuMenuBox.classList.add('opacity-100','h-9/10','md:h-3/4','w-9/10','md:w-3/4');
-    }else{
-        ubuntuMenuBox.classList.add('opacity-0','h-1','w-1','-z-10');
-        ubuntuMenuBox.classList.remove('opacity-100', 'h-9/10','md:h-3/4','w-9/10','md:w-3/4');
+        this.iconGame.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(this.groupGame.classList.contains('opacity-0')){
+                this.groupGame.classList.remove('opacity-0');
+                this.groupGame.classList.add('opacity-100');
+            }else{
+                this.groupGame.classList.remove('opacity-100');
+                this.groupGame.classList.add('opacity-0');
+            }
+        });
     }
-})
-
-// Ubuntu Start Installed Apps List
-
-
-
-
-// Ubuntu Store Apps List
-
-// Defining an App object with its properties & methods
-
-
-// Class for the App Card , responsible to display a single product.
-
-// Toggle App Store
-
-const appToggle = document.getElementById('appToggle');
-const appStore = document.getElementById('appStore');
-const btnAppStoreMinimize = document.getElementById('btnAppStoreMinimize');
-const btnAppStoreMaximize = document.getElementById('btnAppStoreMaximize');
-const btnAppStoreClose = document.getElementById('btnAppStoreClose');
-
-appToggle.addEventListener('click', () => {
-    appStore.classList.toggle('hidden');
-});
-
-btnAppStoreMinimize.addEventListener('click', () => {
-    appStore.classList.add('hidden');
-})
-btnAppStoreMaximize.addEventListener('click', () => {
-    if(appStore.classList.contains('top-0') && appStore.classList.contains('left-0')){
-        appStore.style.top= '50%';
-        appStore.style.left= '50%';
-        appStore.classList.remove("absolute","top-0","left-0","h-full","w-full");
-        appStore.classList.add("absolute","top-1/2","left-1/2","transform","-translate-x-1/2","-translate-y-1/2","h-3/4","w-3/4","rounded-xl","opacity-100");
-    }else{
-        appStore.style.top= '0';
-        appStore.style.left= '0';
-        appStore.classList.remove("absolute","top-1/2","left-1/2","transform","-translate-x-1/2","-translate-y-1/2","h-3/4","w-3/4","rounded-xl","opacity-100");
-        appStore.classList.add("absolute","top-0","left-0","h-full","w-full");
+    handleUbuntuButtonEvents() {
+        this.startUbuntu.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(this.ubuntuMenuBox.classList.contains('opacity-0')){
+                this.ubuntuMenuBox.classList.remove('opacity-0','h-1','w-1','-z-10');
+                this.ubuntuMenuBox.classList.add('opacity-100','h-9/10','md:h-3/4','w-9/10','md:w-3/4');
+                this.close();
+            }else{
+                this.ubuntuMenuBox.classList.add('opacity-0','h-1','w-1','-z-10');
+                this.ubuntuMenuBox.classList.remove('opacity-100', 'h-9/10','md:h-3/4','w-9/10','md:w-3/4');
+            }
+        })
     }
-
-})
-btnAppStoreClose.addEventListener('click', () => {
-    appStore.classList.add('hidden');
-});
-
+    handleAppStoreEvents(){
+        this.appToggle.addEventListener('click', this.toggle.bind(this));
+        this.btnAppStoreMinimize.addEventListener('click', this.close.bind(this));
+        this.btnAppStoreMaximize.addEventListener('click',this.maximize.bind(this));
+        this.btnAppStoreClose.addEventListener('click', this.close.bind(this));
+    }
+    close(){
+        this.appStore.classList.add('hidden');
+    }
+    toggle() {
+        this.appStore.classList.toggle('hidden');
+    }
+    maximize(){
+        if(this.appStore.classList.contains('top-0') && appStore.classList.contains('left-0')){
+            this.appStore.style.top= '50%';
+            this.appStore.style.left= '50%';
+            this.appStore.classList.remove("absolute","top-0","left-0","h-full","w-full");
+            this.appStore.classList.add("absolute","top-1/2","left-1/2","transform","-translate-x-1/2","-translate-y-1/2","h-3/4","w-3/4","rounded-xl","opacity-100");
+        }else{
+            this.appStore.style.top= '0';
+            this.appStore.style.left= '0';
+            this.appStore.classList.remove("absolute","top-1/2","left-1/2","transform","-translate-x-1/2","-translate-y-1/2","h-3/4","w-3/4","rounded-xl","opacity-100");
+            this.appStore.classList.add("absolute","top-0","left-0","h-full","w-full");
+        }
+    }
+    render(){
+        this.renderSidebar();
+        this.handleAppStoreEvents();
+        this.handleUbuntuButtonEvents()
+    }
+}
 // Class App : A blueprint for the App object.
 class AppBlueprint{
     // Defining class properties
@@ -258,8 +263,9 @@ class AppsList extends CreateComponent{
 
 class App{
     static init(){
-        const apps = new AppsList();
-        apps.render();
+        new AppsList().render();
+        new Navbar().render();
+        new Sidebar().render();
     }
 }
 
