@@ -1,12 +1,12 @@
 import {CreateHtmlElement} from "../helper/CreateHtmlElement.js";
-import {Application} from "../blueprints/App.js";
+import {Application} from "../blueprints/Application.js";
 import {ApplicationCard} from "./ApplicationCard.js";
 import {ubuntuApplicationList} from "../data/ubuntu_application_list.js";
+import {CheckImageExists} from "../helper/CheckImageExists.js";
 
-export class ApplicationList extends CreateHtmlElement{
+export class ApplicationList{
     apps = [];
     constructor() {
-        super();
         ubuntuApplicationList.forEach(app => {
             this.apps.push(new Application(
                 app.title,
@@ -25,21 +25,28 @@ export class ApplicationList extends CreateHtmlElement{
 
     // Ubuntu Start installed apps
     renderInstalledApps(){
-        console.log(ubuntuApplicationList);
+
+        const categories = [...new Set(ubuntuApplicationList.map(app => app.category))];
+
+        console.log(categories);
 
         const ubuntuStartInstalledApps = document.getElementById('ubuntuStartInstalledApps');
         // Using a function from the parent class to create a new element.
-        const installedAppsList = this.createRootElement('li','grid grid-cols-5 grid-rows-auto list-none');
+        const installedAppsList = CreateHtmlElement.createRootElement('li','grid grid-cols-5 grid-rows-auto list-none');
         this.apps.forEach((app) => {
             app.installed && app.status ?
                 installedAppsList.innerHTML += `<li class="group hover:cursor-pointer opacity-80 hover:opacity-90">
                                     <div class="flex flex-col justify-between items-center">
-                                        <img src="./assets/images/${app.image}" alt="" srcset="" class="h-[80px] w-[80px] object-cover">
+                                        <img src="" alt="" srcset="" class="h-[80px] w-[80px] object-cover" id="img-${app.title}">
                                         <span>${app.title}</span>
                                     </div>
                                 </li>`
                 : ``;
+            CheckImageExists.check(app.image).then(img => {
+                document.getElementById(`img-${app.title}`).src = img;
+            });
         });
+
         ubuntuStartInstalledApps.appendChild(installedAppsList);
     }
 
@@ -48,7 +55,7 @@ export class ApplicationList extends CreateHtmlElement{
         // function responsible to render the list on the page.
         const ubuntuAppsList = document.getElementById('ubuntuAppsList');
         // Using a parent class's function to crate a new element
-        const appCard = this.createRootElement('div','grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2');
+        const appCard = CreateHtmlElement.createRootElement('div','grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2');
         this.apps.forEach((app) => {
             appCard.append(new ApplicationCard(app).render());
         });

@@ -19,7 +19,7 @@
 <div class="grid grid-rows-[auto_1fr] h-screen">
     <div class="bg-black opacity-80 flex justify-between px-2">
         <div>Activity</div>
-        <div id="date_time"></div>
+        <div id="date_time"  class="hover:cursor-pointer"></div>
         <div class="relative">
             <ul class="flex gap-4 justify-evenly">
                 <li class="group relative">
@@ -47,19 +47,9 @@
                     </div>
                 </li>
             </ul>
-
-<!--            <div class="absolute -bottom-40 right-30 h-36 w-36 bg-[#333333]">-->
-<!--                Volume Menu-->
-<!--            </div>-->
-<!--            <div class="absolute -bottom-40 right-20 h-36 w-36 bg-[#333333]">-->
-<!--                Battery Menu-->
-<!--            </div>-->
-<!--            <div class="absolute -bottom-40 right-10 h-36 w-36 bg-[#333333]">-->
-<!--                System Menu & Power Options-->
-<!--            </div>-->
         </div>
     </div>
-    <div class="grid grid-cols-[12%_88%] sm:grid-cols-[8%_92%] md:grid-cols-[6%_94%] lg:grid-cols-[4%_96%]">
+    <div class="grid grid-cols-[12%_88%] sm:grid-cols-[8%_92%] md:grid-cols-[6%_94%] lg:grid-cols-[4%_96%] xl:grid-cols-[3%_97%]">
         <div class="bg-[rgba(0,0,0,0.4)] px-2 py-4 flex flex-col justify-between">
             <div>
                 <ul class="flex flex-col gap-3" id="sidebarAppList">
@@ -120,53 +110,53 @@
             <!-- App store -->
             <div class="bg-gray-100  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-3/4 w-3/4 rounded-xl" id="appStore" draggable="true">
                 <div class="grid grid-rows-[auto_minmax(0,2fr)] h-full w-full">
-                    <div class="bg-gray-300 py-1 px-2 hover:cursor-grab flex justify-between items-center">
+                    <div class="bg-gray-200 py-1 px-2 hover:cursor-grab flex justify-between items-center">
                         <div><h3 class="text-gray-700 font-semibold">App Store</h3></div>
-                        <div class="flex justify-between items-center border-2 bg-white border-gray-400">
+                        <div class="flex justify-between items-center border-2 bg-white border-gray-300">
                             <label for="searchAppStore" class="w-10 text-gray-500 flex justify-center"><i class="fas fa-search"></i></label>
-                            <input type="text" name="searchAppStore" id="searchAppStore" class="flex-1 bg-transparent outline-none px-2 text-gray-900">
+                            <input type="text" name="searchAppStore" id="searchAppStore" class="flex-1 bg-transparent outline-none px-2 text-gray-900" autocomplete="off">
                         </div>
-                        <div class="flex justify-between items-center gap-3">
-                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMinimize"><i class="text-xs fas fa-window-minimize"></i></button>
-                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMaximize"><i class="text-xs far fa-window-maximize"></i></button>
-                            <button class="bg-gray-400 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreClose"><i class="text-xs fas fa-times-circle"></i></button>
+                        <div class="flex justify-between items-center gap-2">
+                            <button class="bg-gray-300 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-600" id="btnAppStoreMinimize"><i class="text-[8px] font-light far fa-window-minimize"></i></button>
+                            <button class="bg-gray-300 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMaximize"><i class="text-[8px] font-light far fa-window-maximize"></i></button>
+                            <button class="bg-gray-300 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreClose"><i class="text-[8px] fas font-light fa-times"></i></button>
                         </div>
                     </div>
                     <div class="bg-gray-100 flex h-full">
-                            <aside class="md:flex-2 lg:flex-1 border-1 border-r-gray-400">
+                            <aside class="md:flex-2 lg:flex-1 border-1 border-r-gray-300">
                                 <ul class="flex flex-col justify-between items-center gap-4 py-2 ">
                                     <li class="last:mt-auto">
-                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                        <a href="#" class="text-gray-700 hover:text-gray-600 flex flex-col justify-center items-center">
                                             <i class="text-2xl fas fa-compass"></i>
                                             <p class="text-xs">Explore</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                        <a href="#" class="text-gray-700 hover:text-gray-600  flex flex-col justify-center items-center">
                                             <i class="text-2xl fas fa-paper-plane"></i>
                                             <p class="text-xs">Productivity</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                        <a href="#" class="text-gray-700 hover:text-gray-600  flex flex-col justify-center items-center">
                                             <i class="text-2xl fas fa-gamepad"></i>
                                             <p class="text-xs">Games</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                        <a href="#" class="text-gray-700 hover:text-gray-600  flex flex-col justify-center items-center">
                                             <i class="text-2xl fas fa-palette"></i>
                                             <p class="text-xs text-center">Art & Design</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                        <a href="#" class="text-gray-700 hover:text-gray-600  flex flex-col justify-center items-center">
                                             <i class="2xl fas fa-th"></i>
                                             <p class="text-xs">Manager</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-700 flex flex-col justify-center items-center">
+                                        <a href="#" class="text-gray-700 hover:text-gray-600  flex flex-col justify-center items-center">
                                             <i class="text-2xl fas fa-cog"></i>
                                             <p class="text-xs">Settings</p>
                                         </a>
@@ -174,7 +164,7 @@
                                 </ul>
                             </aside>
                             <div class="md:flex-10 lg:flex-11 grid grid-rows-[3fr_9fr] p-4 gap-4 h-full">
-                                <div class="relative flex justify-center items-center rounded-2xl bg-gradient-to-r from-[#77216F] via-[#BB3B0E] to-[#E95420] text-white overflow-hidden">
+                                <div class="relative flex justify-center items-center rounded-md bg-gradient-to-r from-[#77216F] via-[#BB3B0E] to-[#E95420] text-white overflow-hidden">
                                     <div class="flex w-full h-full transition-transform duration-300 ease-in" id="appStoreSlider">
                                         <div class="w-full flex-shrink-0 flex justify-evenly items-center px-10">
                                             <h2 class="capitalize flex-5 text-3xl">Development Tools</h2>
@@ -245,7 +235,6 @@
                                     <button class="absolute top-1/2 right-5 transform -translate-y-1/2 hover:cursor-pointer z-10" id="btnNext" ><i class="fas fa-chevron-right"></i></button>
                                 </div>
                                 <div id="ubuntuAppsList" class="overflow-y-scroll h-full">
-
                                     <!-- Injecting the Apps list here using JS-->
                                 </div>
                             </div>

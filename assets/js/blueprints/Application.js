@@ -9,8 +9,9 @@ export class Application{
     image;
     link;
     category;
-    constructor(title,company,link,description,status,installed,rating,image,category) {
-        // Constructor to set the properties values based on value passed when this class is initialized.
+    pin_to_sidebar;
+    constructor(title,company,link,description,status,installed,rating,image,category,pin_to_sidebar = false) {
+        // Constructor to set the property values based on value passed when this class is initialized.
         this.title = title;
         this.company = company;
         this.link = link;
@@ -20,5 +21,6 @@ export class Application{
         this.rating = rating;
         this.image = image;
         this.category = category;
+        this.pin_to_sidebar = pin_to_sidebar;
     }
 }

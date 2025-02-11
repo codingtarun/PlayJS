@@ -1,8 +1,6 @@
 export class CreateHtmlElement{
-    constructor() {
-    }
-    createRootElement(tag, cssClasses = "", attributes = {}) {
-        // Create new element
+    static createRootElement(tag, cssClasses = "", attributes = {}) {
+        // Create a new element
         const createTagElement = document.createElement(tag);
 
         // Apply CSS classes if provided

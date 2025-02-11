@@ -1,5 +1,6 @@
 export const ubuntuApplicationList = [
   {
+    "id": 1,
     "title": "LibreOffice",
     "company": "The Document Foundation",
     "link": "https://www.libreoffice.org/",
@@ -11,6 +12,7 @@ export const ubuntuApplicationList = [
     "category": "Productivity"
   },
   {
+    "id": 2,
     "title": "GIMP",
     "company": "The GIMP Development Team",
     "link": "https://www.gimp.org/",
@@ -22,6 +24,7 @@ export const ubuntuApplicationList = [
     "category": "Graphics"
   },
   {
+    "id": 3,
     "title": "VLC Media Player",
     "company": "VideoLAN",
     "link": "https://www.videolan.org/vlc/",
@@ -33,6 +36,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 4,
     "title": "Firefox",
     "company": "Mozilla Foundation",
     "link": "https://www.mozilla.org/firefox/",
@@ -44,6 +48,7 @@ export const ubuntuApplicationList = [
     "category": "Internet"
   },
   {
+    "id": 5,
     "title": "Thunderbird",
     "company": "Mozilla Foundation",
     "link": "https://www.thunderbird.net/",
@@ -55,6 +60,7 @@ export const ubuntuApplicationList = [
     "category": "Communication"
   },
   {
+    "id": 6,
     "title": "Blender",
     "company": "Blender Foundation",
     "link": "https://www.blender.org/",
@@ -66,6 +72,7 @@ export const ubuntuApplicationList = [
     "category": "Graphics"
   },
   {
+    "id": 7,
     "title": "Audacity",
     "company": "Audacity Team",
     "link": "https://www.audacityteam.org/",
@@ -77,6 +84,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 8,
     "title": "Atom",
     "company": "GitHub",
     "link": "https://atom.io/",
@@ -88,6 +96,7 @@ export const ubuntuApplicationList = [
     "category": "Development"
   },
   {
+    "id": 9,
     "title": "Visual Studio Code",
     "company": "Microsoft",
     "link": "https://code.visualstudio.com/",
@@ -99,6 +108,7 @@ export const ubuntuApplicationList = [
     "category": "Development"
   },
   {
+    "id": 10,
     "title": "Steam",
     "company": "Valve Corporation",
     "link": "https://store.steampowered.com/",
@@ -110,6 +120,7 @@ export const ubuntuApplicationList = [
     "category": "Games"
   },
   {
+    "id": 11,
     "title": "Shotcut",
     "company": "Meltytech, LLC",
     "link": "https://shotcut.org/",
@@ -121,6 +132,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 12,
     "title": "Kdenlive",
     "company": "KDE Community",
     "link": "https://kdenlive.org/",
@@ -132,6 +144,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 13,
     "title": "Inkscape",
     "company": "Inkscape Community",
     "link": "https://inkscape.org/",
@@ -143,6 +156,7 @@ export const ubuntuApplicationList = [
     "category": "Graphics"
   },
   {
+    "id": 14,
     "title": "FileZilla",
     "company": "FileZilla Project",
     "link": "https://filezilla-project.org/",
@@ -154,6 +168,7 @@ export const ubuntuApplicationList = [
     "category": "Internet"
   },
   {
+    "id": 15,
     "title": "VirtualBox",
     "company": "Oracle",
     "link": "https://www.virtualbox.org/",
@@ -165,6 +180,7 @@ export const ubuntuApplicationList = [
     "category": "System"
   },
   {
+    "id": 16,
     "title": "Discord",
     "company": "Discord Inc.",
     "link": "https://discord.com/",
@@ -176,6 +192,7 @@ export const ubuntuApplicationList = [
     "category": "Communication"
   },
   {
+    "id": 17,
     "title": "Spotify",
     "company": "Spotify AB",
     "link": "https://www.spotify.com/",
@@ -187,6 +204,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 18,
     "title": "Slack",
     "company": "Slack Technologies",
     "link": "https://slack.com/",
@@ -198,6 +216,7 @@ export const ubuntuApplicationList = [
     "category": "Communication"
   },
   {
+    "id": 19,
     "title": "Zoom",
     "company": "Zoom Video Communications",
     "link": "https://zoom.us/",
@@ -209,6 +228,7 @@ export const ubuntuApplicationList = [
     "category": "Communication"
   },
   {
+    "id": 20,
     "title": "OBS Studio",
     "company": "OBS Project",
     "link": "https://obsproject.com/",
@@ -220,6 +240,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 21,
     "title": "Krita",
     "company": "Krita Foundation",
     "link": "https://krita.org/",
@@ -231,6 +252,7 @@ export const ubuntuApplicationList = [
     "category": "Graphics"
   },
   {
+    "id":22,
     "title": "Transmission",
     "company": "Transmission Project",
     "link": "https://transmissionbt.com/",
@@ -242,6 +264,7 @@ export const ubuntuApplicationList = [
     "category": "Internet"
   },
   {
+    "id": 23,
     "title": "Synaptic Package Manager",
     "company": "Canonical Ltd.",
     "link": "https://help.ubuntu.com/community/Synaptic",
@@ -253,6 +276,7 @@ export const ubuntuApplicationList = [
     "category": "System"
   },
   {
+    "id": 24,
     "title": "GParted",
     "company": "GParted Team",
     "link": "https://gparted.org/",
@@ -264,6 +288,7 @@ export const ubuntuApplicationList = [
     "category": "System"
   },
   {
+    "id": 25,
     "title": "Remmina",
     "company": "Remmina Team",
     "link": "https://remmina.org/",
@@ -275,6 +300,7 @@ export const ubuntuApplicationList = [
     "category": "System"
   },
   {
+    "id": 26,
     "title": "Calibre",
     "company": "Kovid Goyal",
     "link": "https://calibre-ebook.com/",
@@ -286,6 +312,7 @@ export const ubuntuApplicationList = [
     "category": "Productivity"
   },
   {
+    "id": 27,
     "title": "KeePassXC",
     "company": "KeePassXC Team",
     "link": "https://keepassxc.org/",
@@ -297,6 +324,7 @@ export const ubuntuApplicationList = [
     "category": "Security"
   },
   {
+    "id": 28,
     "title": "HandBrake",
     "company": "HandBrake Team",
     "link": "https://handbrake.fr/",
@@ -308,6 +336,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 29,
     "title": "Brasero",
     "company": "GNOME Project",
     "link": "https://wiki.gnome.org/Apps/Brasero",
@@ -319,6 +348,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 30,
     "title": "Cheese",
     "company": "GNOME Project",
     "link": "https://wiki.gnome.org/Apps/Cheese",
@@ -330,6 +360,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 31,
     "title": "Evolution",
     "company": "GNOME Project",
     "link": "https://wiki.gnome.org/Apps/Evolution",
@@ -341,6 +372,7 @@ export const ubuntuApplicationList = [
     "category": "Productivity"
   },
   {
+    "id": 32,
     "title": "Rhythmbox",
     "company": "GNOME Project",
     "link": "https://wiki.gnome.org/Apps/Rhythmbox",
@@ -352,6 +384,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 33,
     "title": "Totem",
     "company": "GNOME Project",
     "link": "https://wiki.gnome.org/Apps/Videos",
@@ -363,6 +396,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 34,
     "title": "Geary",
     "company": "GNOME Project",
     "link": "https://wiki.gnome.org/Apps/Geary",
@@ -374,6 +408,7 @@ export const ubuntuApplicationList = [
     "category": "Communication"
   },
   {
+    "id": 35,
     "title": "Pidgin",
     "company": "Pidgin Developers",
     "link": "https://www.pidgin.im/",
@@ -385,6 +420,7 @@ export const ubuntuApplicationList = [
     "category": "Communication"
   },
   {
+    "id": 36,
     "title": "Clementine",
     "company": "Clementine Team",
     "link": "https://www.clementine-player.org/",
@@ -396,6 +432,7 @@ export const ubuntuApplicationList = [
     "category": "Multimedia"
   },
   {
+    "id": 37,
     "title": "Deluge",
     "company": "Deluge Team",
     "link": "https://deluge-torrent.org/",

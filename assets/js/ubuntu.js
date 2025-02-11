@@ -1,8 +1,7 @@
-import {Navbar as ApplicationSearch, Navbar} from "./components/Navbar.js";
 import {Sidebar} from "./components/Sidebar.js";
 import {ApplicationList} from "./components/ApplicationList.js";
 import {ApplicationStoreSlider} from "./components/ApplicationStoreSlider.js";
-
+import {Navbar} from "./components/Navbar.js";
 
 /**
  *
@@ -111,3 +110,107 @@ const ubuntuMenuBoxSearchBar = document.getElementById('ubuntuMenuBoxSearchBar')
 ubuntuMenuBoxSearchBar.addEventListener('keyup', (e) => {
     console.log(e.target.value);
 })
+
+
+/**
+ *
+ * Pure functions:
+ * 1. A function which always returns the same output for the same input.
+ * 2. Has no side effect i.e., doesn't modify external variables, DOM, global state.
+ * 3. Always try to make Pure Function as much as possible for a bug-free code.
+ *
+ * Impure function:
+ * 1. A function whose output can't be predicted, even for the same input.
+ * 2. A function which affects the external variables, etc. i.e., side effect.
+ * 3.
+ *
+ * Examples:
+ * 1. Adding some extra info to an existing array.
+ * 2. Assigning / updating value to an existing variable.
+ */
+
+
+// Pure function
+function pureFunction(a,b){
+    return a+b ;
+}
+
+console.log(pureFunction(1,3)); // Same inputs will always produce the same results.
+
+
+// Impure function
+let aRandomNumber = 0;
+function impureFunction(a){
+    const randomNum =  Math.random(a * 100); // return a ransom number
+    aRandomNumber = randomNum; // External variable is effected i.e side effect
+    return randomNum;
+}
+
+console.log(impureFunction(20)); // Different outputs for the same input.
+
+/**
+ *
+ * Factory function:
+ * 1. A function that returns a new object every time its called.
+ * 2. Acts as a 'factory' producing instances without using 'news' or 'class'.
+ *
+ *
+ *
+ */
+
+function factoryFunction(name){
+    function greetUser(job){ // function inside a function.
+        return `Hello ${name} , are you a ${job} ? `;
+    }
+    return greetUser;
+}
+
+const factoryFunctionObj = factoryFunction('Tarun Chauhan'); // An object will be returned and stored to variable.
+
+console.log(factoryFunctionObj("Software Engineer")); // While executing the object required argument is passed to it.
+
+/**
+ *
+ * Closure function:
+ * 1. A function that remembers the variables from its outer scope,even after the outer function has finished executing.
+ * 2. Used for data encapsulation, function factories, and private variables.
+ *
+ */
+
+function outerFunction (name){
+    return function innerFunction(msg){
+        console.log(`Hello, ${name}, ${msg}`);
+    }
+}
+
+const outerFunctionObj = outerFunction('Tarun Chauhan'); // Outer function is called , it returns an object of inner function
+outerFunctionObj("How are you?");
+outerFunctionObj("Do you want to eat something?");
+
+/**
+ * Closure with private variables:
+ * 1. It helps in creating private variables by keeping them hidden from the outside world.
+ * 2. Encapsulation makes 'counter' safe from accidental modification.
+ */
+
+function counterFunction(){
+    let counter = 456; // Private variable / can be accessed inside this function only.
+    return {
+        increment(){
+            counter++
+            console.log(counter);
+        },
+        decrement(){
+            counter--;
+            console.log(counter);
+        },
+        getCount(){
+            console.log(counter);
+        }
+    };
+}
+const counterFunctionObj = counterFunction();
+counterFunctionObj.increment();
+counterFunctionObj.getCount();
+counterFunctionObj.decrement();
+counterFunctionObj.getCount();
