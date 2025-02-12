@@ -1,7 +1,7 @@
 /**
  *
- * ==> JavaScript Key notes :
- * 1. A dynamic , weakly types programming language which is complied at runtime.
+ * ==> JavaScript keynotes:
+ * 1. A dynamic, weakly types programming language which is complied at runtime.
  * 2. Aimed to make a webpage more dynamic and interactive.
  * 3. Runs on a web browser.
  * 4. Hosted language i.e. runs on different envirnment - browsers, server etc.
