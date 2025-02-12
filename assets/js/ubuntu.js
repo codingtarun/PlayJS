@@ -232,13 +232,3 @@ counterFunctionObj.getCount();
  */
 
 
-// const user = [
-//     {
-//         username: "Tarun Chauhan",
-//         password: "admin@123",
-//     },
-// ];
-//
-// localStorage.setItem("user", JSON.stringify(user));
-//
-// console.log(JSON.parse(localStorage.getItem("user")));

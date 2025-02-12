@@ -6,8 +6,10 @@ export class Login{
     checkLogin(){
         if(localStorage.getItem('userData') !== null){
             this.loginScreen.classList.add('hidden');
+            this.loginScreen.classList.remove('flex');
         }else{
             this.loginScreen.classList.remove('hidden');
+            this.loginScreen.classList.add('flex');
         }
     }
     togglePasswordType(){
