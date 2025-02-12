@@ -15,7 +15,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
-<body class="h-svh bg-[url('https://codingtarun.github.io/PlayJS/assets/images/ubuntu_bg.jpg')] font-[ubuntu] bg-cover bg-center bg-no-repeat text-white overflow-hidden">
+<body class=" relative h-svh bg-[url('https://codingtarun.github.io/PlayJS/assets/images/ubuntu_bg.jpg')] font-[ubuntu] bg-cover bg-center bg-no-repeat text-white overflow-hidden">
+<div class=" hidden flex flex-col justify-between px-3 py-1 items-center absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-r from-[#77216F] via-[#BB3B0E] to-[#E95420]" id="loginScreen">
+    <div class="text-xs flex justify-between items-center w-full">
+        <div></div>
+        <div>Date Time</div>
+        <div>Dropdown</div>
+    </div>
+    <div class="group flex flex-col justify-between items-center gap-3">
+        <img src="./assets/images/meditate.webp" class="size-20 shrink-0 rounded-full border-2 border-white" alt="" srcset="">
+        <h4>Welcome User</h4>
+        <form id="loginForm" class="flex flex-col gap-2">
+            <div class="border-1 border-transparent group-hover:shadow-lg group-hover:border-[#f78200] rounded-sm p-1 bg-[#181818]">
+                <input type="password" id="password" name="password" placeholder="Password" class="px-1 py-0.5 focus:outline-0" />
+                <label for="password" class="hover:cursor-pointer text-gray-400"><i class="fas fa-eye-slash"></i></label>
+            </div>
+            <p class="text-xs font-light">Please enter a 3-letter random password.</p>
+        </form>
+    </div>
+    <div>
+        <h2 class="text-4xl" >ubuntu</h2>
+    </div>
+</div>
 <div class="grid grid-rows-[auto_1fr] h-screen">
     <div class="bg-black opacity-80 flex justify-between px-2">
         <div>Activity</div>

@@ -2,6 +2,7 @@ import {Sidebar} from "./components/Sidebar.js";
 import {ApplicationList} from "./components/ApplicationList.js";
 import {ApplicationStoreSlider} from "./components/ApplicationStoreSlider.js";
 import {Navbar} from "./components/Navbar.js";
+import {Login} from "./components/Login.js";
 
 /**
  *
@@ -17,6 +18,7 @@ class App{
         new Navbar().render();
         new Sidebar().render();
         new ApplicationStoreSlider().render();
+        new Login().render();
     }
 }
 App.init();
@@ -214,3 +216,29 @@ counterFunctionObj.increment();
 counterFunctionObj.getCount();
 counterFunctionObj.decrement();
 counterFunctionObj.getCount();
+
+
+/**
+ *
+ *
+ * Local Storage:
+ * 1. Local Storage is a web API that allows you to store key-value pairs in the browser with no expiration time.
+ * 2. The data remains stored even after the page is refreshed or the browser is closed.
+ * 3. Localstorage only supports string, so we use JSON.stringify() to share objects and JSON.parse() to retrieve them.
+ * 4. Data has no expiration.
+ * 5. 5MB browser limit per website.
+ *
+ *
+ */
+
+
+// const user = [
+//     {
+//         username: "Tarun Chauhan",
+//         password: "admin@123",
+//     },
+// ];
+//
+// localStorage.setItem("user", JSON.stringify(user));
+//
+// console.log(JSON.parse(localStorage.getItem("user")));
