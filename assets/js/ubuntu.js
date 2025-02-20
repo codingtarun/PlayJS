@@ -231,4 +231,28 @@ counterFunctionObj.getCount();
  *
  */
 
+/**
+ * Asynchronous JS:
+ *
+ * 1. JS is a single threaded programing language, i.e., it can execute only one task at a time.
+ * 2. Asynchronous programing allows it to handle multiple tasks efficiently without blocking the main thread.
+ *
+ *
+ */
+
+/**
+ *
+ * setTimeout: built-in function to delay the execution of a function by a specified amount of time.
+ *
+ */
+
+console.log("A");
+ // execution will not be blocked
+setTimeout(()=> {
+    // This functions works with the help of browser.
+    console.log("B");
+}, 2000);
+console.log("C");
+
+
 

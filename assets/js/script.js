@@ -1,21 +1,22 @@
 /**
  *
  * ==> JavaScript keynotes:
+ *
  * 1. A dynamic, weakly types programming language which is complied at runtime.
  * 2. Aimed to make a webpage more dynamic and interactive.
  * 3. Runs on a web browser.
- * 4. Hosted language i.e. runs on different envirnment - browsers, server etc.
- * 5. It is made to manipulate the HTML,CSS and can send HTTP request in the backbground etc.
+ * 4. Hosted language i.e. runs on different environment - browsers, server etc.
+ * 5. It is made to manipulate the HTML,CSS and can send HTTP request in the background, etc.
  * 6. Not able to access the local files of the host machine.
- * 7. It doesn't directly interact with the OS, but the browser provied it an environment to run on it.
- * 8. Google V8 JS engine is modified by developers and allowed to run on variety of machines , and this tool is called NODEJS.
- * 9. NODE.JS can be set to executed JS on any machines so can be used to build a server.
+ * 7. It doesn't directly interact with the OS, but the browser provided it an environment to run on it.
+ * 8. Google V8 JS engine is modified by developers and allowed to run on a variety of machines , and this tool is called NODEJS.
+ * 9. NODE.JS can be set to execute JS on any machines so can be used to build a server.
  *
  * Ex. JS enables us to make a new request to the server without the need to reload the entire webpage.
  *
  *
  * ==> How JS is executed:
- * 1. Browsers are build using Javascript Engines.
+ * 1. Browsers are built using JavaScript Engines.
  * 2. JavaScript runs on JavaScript Engine of the browser.
  * 3. Popular JS engine V8(Chrome), SpiderMonkey(Firefox).
  * 4. JS engine life cycle :
@@ -24,13 +25,13 @@
  *
  * ==> Dynamic & Weekly typed language :
  * 1. Dynamic : Not pre-compiled, but is parsed and executed on the fly.
- * 2. Due to its dynamic nature it is able to switch the data types at runtime.
+ * 2. Due to its dynamic nature, it is able to switch the data types at runtime.
  * 3. Weekly Types : You don't have to tell JS the type of data, it automatically detects the data type.
  *
- * ==> JS runs on a host environment :
- * 1. JS engine can be hosted on different environment.
- * 2. Most popular and common environment is the browser environment.
- * 3. Server side environment is also getting popluar now.
+ * ==> JS runs on a host environment:
+ * 1. JS engine can be hosted in different environments.
+ * 2. The Most popular and common environment is the browser environment.
+ * 3. Server side environment is also getting popular now.
  *
  *
  * ==> Brief History :
@@ -42,10 +43,10 @@
  * 6. Still evolving and new features are added every year.
  *
  *
- * ==> ECMAScript :
- * 1. Is a standard that defines the core features and syntax of the scripting language.
+ * ==> ECMAScript:
+ * 1. It Is a standard that defines the core features and syntax of the scripting language.
  * 2. Created by ECMA International, an organization that sets the technical standard to ensure
- * the consistency across different implementation of different languages.
+ * the consistency across different implementations of different languages.
  * 3. JavaScript, the most famous implementation of the specifications defined by ECMAScript.
  * 4. ECMAScript is not directly used, but via JavaScript implementation.
  *
@@ -57,7 +58,7 @@
  *
  * Basics Variables, Data Types, Operators & Functions
  *
- * keynotes :
+ * Keynotes:
  * 1. The position where the file is imported in our webpage effects how and when our code will be executes
  *
  *
@@ -84,20 +85,20 @@
  * Operators :
  * 1. Symbols or Keywords used to perform operations on values.
  *
- * JS support a variety of operators as following :
- * 1. Arithmetic Operators : Mathematical Calculation. +, -, *, /, %, **.
- * 2. Assignment Operators : Assigning values to variables. =, +=, -=, *=, /=, %=.
- * 3. Comparison Operator : Compare two values & return a boolean (true/false). ==, ===, !=, !==, >, <, >=, <=.
- * 4. Logical Operator : Logical Operations : &&, ||, !.
- * 5. Bitwise Operator : Operates at binary level. &, |, ^, ~, (CHECK LATER)
- * 6. Ternary Operator : A shorthand for if-else. condition ? ifTrueStatement : ifFalseStatement
- * 7. Type Operator : Check data type : typeOf, instanceOf.
- * 8. String Operator : concatenate (+) / add and assign (+=)
+ * JS supports a variety of operators as following :
+ * 1. Arithmetic Operators: Mathematical Calculation. +, -, *, /, %, **.
+ * 2. Assignment Operators: Assigning values to variables. =, +=, -=, *=, /=, %=.
+ * 3. Comparison Operator: Compare two values & return a boolean (true/false). ==, ===, !=, !==, >, <, >=, <=.
+ * 4. Logical Operator: Logical Operations : &&, ||, !.
+ * 5. Bitwise Operator: Operates at binary level. &, |, ^, ~, (CHECK LATER)
+ * 6. Ternary Operator: A shorthand for if-else. condition ? ifTrueStatement : ifFalseStatement
+ * 7. Type Operator: Check data type : typeOf, instanceOf.
+ * 8. String Operator: concatenate (+) / add and assign (+=)
  *
  *
  *
- * Data types :
- * ==> Primitive data types : Immutable values.
+ * Data types:
+ * ==> Primitive data types: Immutable values.
  * 1. Number.
  * 2. String
  * 3. Boolean
@@ -121,18 +122,18 @@
 
 /**
  *
- * Functions :
+ * Functions:
  * 1. A block of reusable code designed to perform a specific task.
  * 2. It can be executed whenever evoked and can be called as many as required times.
- * 3. When compiler reads a function , it doesn't imminently execute the function. It first stores in into the memory and when the function is invoked , then it executes the function.
- * 4. Function themselves are Object.
+ * 3. When compiler reads a function, it doesn't imminently execute the function. It first stores in into the memory and when the function is invoked , then it executes the function.
+ * 4. Functions themselves are Object.
  *
- * Types of function :
- * 1. Function declaration : A function is defined using the function keyword, followed by a name and parentheses.
- * 2. Function expression : A function can also be assigned to a variable. Such functions are anonymous (they have no name).
- * 3. Arrow function : A shorter syntax for writing functions, using the => arrow.
+ * Types of function:
+ * 1. Function declaration: A function is defined using the function keyword, followed by a name and parentheses.
+ * 2. Function expression: A function can also be assigned to a variable. Such functions are anonymous (they have no name).
+ * 3. Arrow function: A shorter syntax for writing functions, using the => arrow.
  * 4. Immediately invoked function expression (IIFE) : Functions that are executed as soon as they are defined.
- * 5. Higher-Order function : Functions that accept other functions as arguments or return functions.
+ * 5. Higher-Order function: Functions that accept other functions as arguments or return functions.
  *
  *
  *
