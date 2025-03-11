@@ -36,7 +36,7 @@ export class Login{
                 this.loginScreen.classList.add('hidden');
                 this.loginForm.querySelector('p').classList.add('hidden');
             }else{
-                this.loginForm.querySelector('p').classList.add('text-red-500');
+                this.loginForm.querySelector('p').classList.add('text-white');
             }
         }
     }

@@ -19,7 +19,7 @@
  * 1. Browsers are built using JavaScript Engines.
  * 2. JavaScript runs on JavaScript Engine of the browser.
  * 3. Popular JS engine V8(Chrome), SpiderMonkey(Firefox).
- * 4. JS engine life cycle :
+ * 4. JS engine life cycle:
  *          JS code ==> Parse code ==> Compile to Machine Code ==> Execute the code.
  * 5. All of this happens on a single thread.(More about it later).
  *

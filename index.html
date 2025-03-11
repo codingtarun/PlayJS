@@ -16,11 +16,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body class=" relative h-svh bg-[url('https://codingtarun.github.io/PlayJS/assets/images/ubuntu_bg.jpg')] font-[ubuntu] bg-cover bg-center bg-no-repeat text-white overflow-hidden">
+
+<!--Login Screen-->
 <div class="hidden flex-col justify-between px-3 py-1 items-center absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-r from-[#77216F] via-[#BB3B0E] to-[#E95420]" id="loginScreen">
     <div class="text-xs flex justify-between items-center w-full">
         <div></div>
         <div>Date Time</div>
-        <div>Dropdown</div>
+        <div>
+            <ul class="flex gap-2 items-center">
+                <li class="mr-4">
+                    <button class="hover:cursor-pointer"><i class="fas fa-universal-access"></i></button>
+                </li>
+                <li>
+                    <button class="hover:cursor-pointer"><i class="fas fa-network-wired"></i></button>
+                </li>
+                <li>
+                    <button class="hover:cursor-pointer"><i class="fas fa-volume-up"></i></button>
+                </li>
+                <li>
+                    <button class="hover:cursor-pointer"><i class="fas fa-power-off"></i></button>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="group flex flex-col justify-between items-center gap-3">
         <img src="./assets/images/meditate.webp" class="size-20 shrink-0 rounded-full border-2 border-white" alt="" srcset="">
@@ -30,14 +47,18 @@
                 <input type="password" id="password" name="password" placeholder="Password" class="px-1 py-0.5 focus:outline-0" />
                 <label for="password" class="hover:cursor-pointer text-gray-400"><i class="fas fa-eye-slash"></i></label>
             </div>
-            <p class="text-xs font-light">Please enter a 3-letter random password.</p>
+            <p class="text-xs font-light text-white">Please enter a 3-letter random password.</p>
         </form>
     </div>
     <div>
-        <h2 class="text-4xl" >ubuntu</h2>
+        <h2 class="text-4xl">ubuntu<sup><i class="text-sm fab fa-ubuntu"></i></sup></h2>
     </div>
 </div>
+<!--/Login Screen-->
+
+<!--Main Container-->
 <div class="grid grid-rows-[auto_1fr] h-screen">
+    <!--Top Menubar-->
     <div class="bg-black opacity-80 flex justify-between px-2">
         <div>Activity</div>
         <div id="date_time"  class="hover:cursor-pointer"></div>
@@ -70,7 +91,10 @@
             </ul>
         </div>
     </div>
+    <!--/Top Menubar-->
+    <!--Desktop-->
     <div class="grid grid-cols-[12%_88%] sm:grid-cols-[8%_92%] md:grid-cols-[6%_94%] lg:grid-cols-[4%_96%] xl:grid-cols-[3%_97%]">
+        <!--Sidebar Menu-->
         <div class="bg-[rgba(0,0,0,0.4)] px-2 py-4 flex flex-col justify-between">
             <div>
                 <ul class="flex flex-col gap-3" id="sidebarAppList">
@@ -96,11 +120,15 @@
                 </ul>
             </div>
         </div>
+        <!--/Sidebar Menu-->
+        <!--Desktop Space-->
         <div class="relative h-full w-full">
+            <!--Games Menu Box-->
             <div class="h-1/2 w-1/2 bg-[rgba(0,0,0,0.4)] absolute top-[90px] left-[10px] opacity-0 transition-all duration-500 ease-in-out" id="group-game">
                 <h3 class="bg-black text-white font-bold text-center">Games</h3>
-                <div>BODY</div>
+                <div>Games Menu</div>
             </div>
+            <!--/Games Menu Box-->
             <!-- Ubuntu Menu Box -->
             <div class="h-1 w-1 bg-[rgba(0,0,0,0.5)] border-1 border-black outline-8 outline-[rgba(0,0,0,0.3)] rounded-br-2xl absolute top-4 left-4 -z-10 transition-all duration-300 ease-in-out opacity-0 overflow-y-scroll" id="ubuntuMenuBox">
                 <form id="ubuntuMenuBoxSearchBar">
@@ -128,8 +156,55 @@
 
             </div>
             <!-- /Ubuntu Menu Box -->
+            <!--About This Ubuntu App-->
+            <div id="aboutPopup" class="bg-[rgba(0,0,0,0.5)] hidden border-1 border-black rounded-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-3 flex-col h-3/4 w-3/4">
+                <div id="aboutPopupClose" class="absolute -top-4 -right-2 flex justify-between">
+                    <button class="hover:cursor-pointer bg-[rgba(0,0,0,0.5)] border-1 border-black rounded-full w-5 h-5" ><i class="text-red-500 fas fa-times"></i></button>
+                </div>
+                <div id="aboutPopupInfo" class="p-5 overflow-y-scroll">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex eaproident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex eaproident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex eaproident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex eaproident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea
+                </div>
+            </div>
+            <!--/About This Ubuntu App-->
             <!-- App store -->
-            <div class="bg-gray-100  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-3/4 w-3/4 rounded-xl" id="appStore" draggable="true">
+            <div class="bg-gray-100 hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-3/4 w-3/4 rounded-xl" id="appStore" draggable="true">
                 <div class="grid grid-rows-[auto_minmax(0,2fr)] h-full w-full">
                     <div class="bg-gray-200 py-1 px-2 hover:cursor-grab flex justify-between items-center">
                         <div><h3 class="text-gray-700 font-semibold">App Store</h3></div>
@@ -264,8 +339,11 @@
             </div>
             <!-- /App store-->
         </div>
+        <!--/Desktop Space-->
     </div>
+    <!--/Desktop-->
 </div>
+<!--/Main Container-->
 <!-- Scripts-->
 <script type="module" src="./assets/js/ubuntu.js"></script>
 </body>
