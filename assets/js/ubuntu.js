@@ -3,6 +3,7 @@ import {ApplicationList} from "./components/ApplicationList.js";
 import {ApplicationStoreSlider} from "./components/ApplicationStoreSlider.js";
 import {Navbar} from "./components/Navbar.js";
 import {Login} from "./components/Login.js";
+import {Popup} from "./components/Popup.js";
 
 /**
  *
@@ -14,11 +15,13 @@ import {Login} from "./components/Login.js";
 
 class App{
     static init(){
+        new Popup().render();
         new ApplicationList().render();
         new Navbar().render();
         new Sidebar().render();
         new ApplicationStoreSlider().render();
         new Login().render();
+
     }
 }
 App.init();
