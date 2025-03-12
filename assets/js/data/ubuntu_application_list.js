@@ -442,5 +442,17 @@ export const ubuntuApplicationList = [
     "rating": 4.1,
     "image": "clementine.png",
     "category": "Multimedia"
+  },
+  {
+    "id": 38,
+    "title": "Google Chrome",
+    "company": "Google Inc.",
+    "link": "https://www.google.com/chrome/",
+    "description": "Google Chrome is a fast, secure, and user-friendly web browser developed by Google, offering seamless browsing with powerful extensions and features.",
+    "status": true,
+    "installed": true,
+    "rating": 4.8,
+    "image": "chrome.png",
+    "category": "Productivity"
   }
 ]
