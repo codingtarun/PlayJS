@@ -253,7 +253,7 @@ console.log("A");
  // execution will not be blocked
 setTimeout(()=> {
     // This functions works with the help of browser.
-    console.log("B");
+
 }, 2000);
 console.log("C");
 
