@@ -5,6 +5,18 @@ import {ubuntuApplicationList} from "../data/ubuntu_application_list.js";
 import {CheckImageExists} from "../helper/CheckImageExists.js";
 
 export class ApplicationList{
+    /**
+     *
+     * A constructor in JavaScript is a special method inside a class
+     * that gets called automatically when a new object is created.
+     * It is used to initialize properties of the class.
+     *
+     * Key Points
+     * The constructor method runs automatically when an object is created.
+     * It initializes the properties (this.name and this.age in the example).
+     * You can pass arguments when creating an object (new Person("Alice", 25)).
+     *
+     */
     apps = [];
     constructor() {
         ubuntuApplicationList.forEach(app => {

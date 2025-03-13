@@ -14,16 +14,36 @@ import {Popup} from "./components/Popup.js";
  */
 
 class App{
+    /**
+     *
+     * A static class in JavaScript is a class that only contains static methods and properties.
+     * It cannot be instantiated, meaning you cannot create objects from it.
+     * Instead, its methods are called directly on the class.
+     *
+     * Key Points:
+     * ✔ No need to create an instance (new ClassName()).
+     * ✔ Methods belong to the class, not objects.
+     * ✔ Used for utility functions, like validation or calculations.
+     *
+     */
     static init(){
+        //Initializing the components classes here.
         new Popup().render();
         new ApplicationList().render();
-        new Navbar().render();
+        new Navbar().render(); // C
         new Sidebar().render();
         new ApplicationStoreSlider().render();
         new Login().render();
-
     }
 }
+
+/**
+ *
+ * Calling a static method from a static class.
+ * This is responsible to initialize the entire JS code.
+ * (You'll break the app if you remove this code)
+ *
+ */
 App.init();
 
 /**

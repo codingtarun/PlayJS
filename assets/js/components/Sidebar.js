@@ -1,5 +1,17 @@
 export class Sidebar{
     constructor() {
+        /**
+         *
+         * A constructor in JavaScript is a special method inside a class
+         * that gets called automatically when a new object is created.
+         * It is used to initialize properties of the class.
+         *
+         * Key Points
+         * The constructor method runs automatically when an object is created.
+         * It initializes the properties (this.name and this.age in the example).
+         * You can pass arguments when creating an object (new Person("Alice", 25)).
+         *
+         */
         this.appToggle = document.getElementById('appToggle');
         this.appStore = document.getElementById('appStore');
         this.btnAppStoreMinimize = document.getElementById('btnAppStoreMinimize');
@@ -9,9 +21,12 @@ export class Sidebar{
         this.groupGame = document.getElementById('group-game');
         this.startUbuntu = document.getElementById('startUbuntu');
         this.ubuntuMenuBox = document.getElementById('ubuntuMenuBox');
+        this.sidebarAppList = document.getElementById('sidebarAppList');
+    }
+    generateSidebarAppList() {
+
     }
     renderSidebar(){
-
         this.iconGame.addEventListener('click', (e) => {
             e.preventDefault();
             if(this.groupGame.classList.contains('opacity-0')){
