@@ -4,6 +4,7 @@ import {ApplicationStoreSlider} from "./components/ApplicationStoreSlider.js";
 import {Navbar} from "./components/Navbar.js";
 import {Login} from "./components/Login.js";
 import {Popup} from "./components/Popup.js";
+import {ApplicationStore} from "./components/ApplicationStore.js";
 
 /**
  *
@@ -30,6 +31,7 @@ class App{
         //Initializing the components classes here.
         new Popup().render();
         new ApplicationList().render();
+        new ApplicationStore().render();
         new Navbar().render(); // C
         new Sidebar().render();
         new ApplicationStoreSlider().render();

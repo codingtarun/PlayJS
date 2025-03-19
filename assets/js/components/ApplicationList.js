@@ -17,8 +17,13 @@ export class ApplicationList{
      * You can pass arguments when creating an object (new Person("Alice", 25)).
      *
      */
-    apps = [];
+    apps = []; // Declaring an class scoped empty array which will be used to store the application list.
     constructor() {
+        /**
+         *
+         * Looping through the app list and pushing each item to the 'apps' array using the 'Application' class object.
+         *
+         */
         ubuntuApplicationList.forEach(app => {
             this.apps.push(new Application(
                 app.title,
@@ -32,7 +37,7 @@ export class ApplicationList{
                 app.category // Only if Application class supports it
             ));
         });
-
+        //console.log(this.apps);
     }
 
     // Ubuntu Start installed apps
@@ -40,7 +45,7 @@ export class ApplicationList{
 
         const categories = [...new Set(ubuntuApplicationList.map(app => app.category))];
 
-        console.log(categories);
+        //console.log(categories);
 
         const ubuntuStartInstalledApps = document.getElementById('ubuntuStartInstalledApps');
         // Using a function from the parent class to create a new element.
@@ -54,26 +59,13 @@ export class ApplicationList{
                                     </div>
                                 </li>`
                 : ``;
-            CheckImageExists.check(app.image).then(img => {
+            CheckImageExists.checkImage(app.image).then(img => {
                 document.getElementById(`img-${app.title}`).src = img;
             });
         });
 
         ubuntuStartInstalledApps.appendChild(installedAppsList);
     }
-
-    // Ubuntu Apps center Apps list
-    renderStoreApps(){
-        // function responsible to render the list on the page.
-        const ubuntuAppsList = document.getElementById('ubuntuAppsList');
-        // Using a parent class's function to crate a new element
-        const appCard = CreateHtmlElement.createRootElement('div','grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2');
-        this.apps.forEach((app) => {
-            appCard.append(new ApplicationCard(app).render());
-        });
-        ubuntuAppsList.appendChild(appCard);
-    }
-
     renderSidebarApps(){
         const sidebarAppsList = document.getElementById('sidebarAppsList');
     }
@@ -81,7 +73,6 @@ export class ApplicationList{
     // Method to render HTML related to Apps.
     render(){
         // All rending of apps are done here.
-        this.renderStoreApps();
         this.renderInstalledApps();
         this.renderSidebarApps();
     }

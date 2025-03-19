@@ -1,5 +1,9 @@
 export class Application{
-    // Defining class properties
+    /**
+     *
+     * Defining a class specifically including the methods and properties of the Ubuntu Applications list.
+     *
+     */
     title;
     company;
     description;
@@ -10,8 +14,20 @@ export class Application{
     link;
     category;
     pin_to_sidebar;
+
     constructor(title,company,link,description,status,installed,rating,image,category,pin_to_sidebar = false) {
-        // Constructor to set the property values based on value passed when this class is initialized.
+        /**
+         *
+         * A constructor in JavaScript is a special method inside a class
+         * that gets called automatically when a new object is created.
+         * It is used to initialize properties of the class.
+         *
+         * Key Points
+         * The constructor method runs automatically when an object is created.
+         * It initializes the properties (this.name and this.age in the example).
+         * You can pass arguments when creating an object (new Person("Alice", 25)).
+         *
+         */
         this.title = title;
         this.company = company;
         this.link = link;
