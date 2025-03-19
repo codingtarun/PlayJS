@@ -1,3 +1,11 @@
+/**
+ *
+ * Here is the default list of some popular Linux Applications
+ *
+ * This list will be used everywhere inside the application to generate the app list based on the filter.
+ *
+ **/
+
 export const ubuntuApplicationList = [
   {
     "id": 1,
@@ -9,7 +17,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.5,
     "image": "libreoffice.png",
-    "category": "Productivity"
+    "category": "Productivity",
+    "pin_to_sidebar": true,
   },
   {
     "id": 2,
@@ -21,7 +30,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.2,
     "image": "gimp.png",
-    "category": "Graphics"
+    "category": "Graphics",
+    "pin_to_sidebar": true,
   },
   {
     "id": 3,
@@ -33,7 +43,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.7,
     "image": "vlc.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 4,
@@ -45,7 +56,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.4,
     "image": "firefox.png",
-    "category": "Internet"
+    "category": "Internet",
+    "pin_to_sidebar": true,
   },
   {
     "id": 5,
@@ -57,7 +69,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.0,
     "image": "thunderbird.png",
-    "category": "Communication"
+    "category": "Communication",
+    "pin_to_sidebar": true,
   },
   {
     "id": 6,
@@ -69,7 +82,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.6,
     "image": "blender.png",
-    "category": "Graphics"
+    "category": "Graphics",
+    "pin_to_sidebar": true,
   },
   {
     "id": 7,
@@ -81,7 +95,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.1,
     "image": "audacity.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 8,
@@ -93,7 +108,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.3,
     "image": "atom.png",
-    "category": "Development"
+    "category": "Development",
+    "pin_to_sidebar": true,
   },
   {
     "id": 9,
@@ -105,7 +121,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.8,
     "image": "vscode.png",
-    "category": "Development"
+    "category": "Development",
+    "pin_to_sidebar": true,
   },
   {
     "id": 10,
@@ -117,7 +134,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.5,
     "image": "steam.png",
-    "category": "Games"
+    "category": "Games",
+    "pin_to_sidebar": true,
   },
   {
     "id": 11,
@@ -129,7 +147,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.0,
     "image": "shotcut.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 12,
@@ -141,7 +160,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.2,
     "image": "kdenlive.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 13,
@@ -153,7 +173,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.3,
     "image": "inkscape.png",
-    "category": "Graphics"
+    "category": "Graphics",
+    "pin_to_sidebar": true,
   },
   {
     "id": 14,
@@ -165,7 +186,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.0,
     "image": "filezilla.png",
-    "category": "Internet"
+    "category": "Internet",
+    "pin_to_sidebar": true,
   },
   {
     "id": 15,
@@ -177,7 +199,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.4,
     "image": "virtualbox.png",
-    "category": "System"
+    "category": "System",
+    "pin_to_sidebar": true,
   },
   {
     "id": 16,
@@ -189,7 +212,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.5,
     "image": "discord.png",
-    "category": "Communication"
+    "category": "Communication",
+    "pin_to_sidebar": true,
   },
   {
     "id": 17,
@@ -201,7 +225,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.6,
     "image": "spotify.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 18,
@@ -213,7 +238,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.3,
     "image": "slack.png",
-    "category": "Communication"
+    "category": "Communication",
+    "pin_to_sidebar": true,
   },
   {
     "id": 19,
@@ -225,7 +251,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.2,
     "image": "zoom.png",
-    "category": "Communication"
+    "category": "Communication",
+    "pin_to_sidebar": true,
   },
   {
     "id": 20,
@@ -237,7 +264,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.5,
     "image": "obs.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 21,
@@ -249,7 +277,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.4,
     "image": "ubuntu_app.png",
-    "category": "Graphics"
+    "category": "Graphics",
+    "pin_to_sidebar": true,
   },
   {
     "id":22,
@@ -261,7 +290,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.0,
     "image": "transmission.png",
-    "category": "Internet"
+    "category": "Internet",
+    "pin_to_sidebar": true,
   },
   {
     "id": 23,
@@ -273,7 +303,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 3.8,
     "image": "synaptic_package_manager.png",
-    "category": "System"
+    "category": "System",
+    "pin_to_sidebar": true,
   },
   {
     "id": 24,
@@ -285,7 +316,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.1,
     "image": "gparted.png",
-    "category": "System"
+    "category": "System",
+    "pin_to_sidebar": true,
   },
   {
     "id": 25,
@@ -297,7 +329,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.0,
     "image": "remmina.png",
-    "category": "System"
+    "category": "System",
+    "pin_to_sidebar": true,
   },
   {
     "id": 26,
@@ -309,7 +342,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.3,
     "image": "calibre.png",
-    "category": "Productivity"
+    "category": "Productivity",
+    "pin_to_sidebar": true,
   },
   {
     "id": 27,
@@ -321,7 +355,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.2,
     "image": "keepassxc.png",
-    "category": "Security"
+    "category": "Security",
+    "pin_to_sidebar": true,
   },
   {
     "id": 28,
@@ -333,7 +368,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.4,
     "image": "handbrake.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 29,
@@ -345,7 +381,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 3.7,
     "image": "brasero.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 30,
@@ -357,7 +394,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 3.9,
     "image": "cheese.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 31,
@@ -369,7 +407,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 4.0,
     "image": "evolution.png",
-    "category": "Productivity"
+    "category": "Productivity",
+    "pin_to_sidebar": true,
   },
   {
     "id": 32,
@@ -381,7 +420,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.0,
     "image": "rhythmbox.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 33,
@@ -393,7 +433,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 3.8,
     "image": "totem.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 34,
@@ -405,7 +446,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 3.9,
     "image": "geary.png",
-    "category": "Communication"
+    "category": "Communication",
+    "pin_to_sidebar": true,
   },
   {
     "id": 35,
@@ -417,7 +459,8 @@ export const ubuntuApplicationList = [
     "installed": false,
     "rating": 3.8,
     "image": "pidgin.png",
-    "category": "Communication"
+    "category": "Communication",
+    "pin_to_sidebar": true,
   },
   {
     "id": 36,
@@ -429,7 +472,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.1,
     "image": "clementine.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 37,
@@ -441,7 +485,8 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.1,
     "image": "clementine.png",
-    "category": "Multimedia"
+    "category": "Multimedia",
+    "pin_to_sidebar": true,
   },
   {
     "id": 38,
@@ -453,6 +498,7 @@ export const ubuntuApplicationList = [
     "installed": true,
     "rating": 4.8,
     "image": "chrome.png",
-    "category": "Productivity"
+    "category": "Productivity",
+    "pin_to_sidebar": true,
   }
 ]
