@@ -306,6 +306,60 @@
                 </div>
             </div>
             <!-- /App store-->
+            <!--Desktop-->
+                <div class="absolute top-0 left-0 h-full w-full p-8" id="desktop">
+                    <!--Desktop Icons-->
+                    <ul class="flex flex-col justify-center items-start gap-5">
+                        <li class="flex flex-col justify-center items-center gap-2 group opacity-98 hover:cursor-pointer hover:opacity-100" id="javaScriptNotesIcon">
+                            <img src="./assets/images/note.png" alt="" srcset="" class="h-10 w-10 group-hover:scale-102">
+                            <span class="text-xs text-center leading-3">JavaScript <br>Notes</span>
+                        </li>
+                    </ul>
+                    <!--/Desktop Icons-->
+                    <!--JavaScript Notes-->
+                        <div class="bg-white hidden text-black absolute top-0 left-0 h-full w-full flex flex-col" id="javaScriptNotesWindow">
+                            <div class="bg-[#312f2f] h-[40px] flex flex-row justify-between items-center p-0.5 text-white">
+                                <div>
+                                    <ul>
+                                        <li>JavaScript Notes</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="flex flex-row justify-center items-center gap-3">
+                                        <li>
+                                            <button><i class="fas fa-search"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="fas fa-list"></i></button>
+                                            <button><i class="fas fa-caret-down"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="fas fa-search"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="fas fa-window-minimize"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="far fa-window-maximize"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="fas fa-times"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-[#f3f1ef] flex-1 flex">
+                                <div class="bg-[#f2f2f2] flex-1">
+                                    ABC
+                                </div>
+                                <div class="bg-white flex-5">
+                                    MAIN CONTENT
+                                </div>
+                            </div>
+                        </div>
+                    <!--JavaScript Notes-->
+                </div>
+            <!--/Desktop-->
         </div>
         <!--/Desktop Space-->
     </div>
@@ -313,6 +367,7 @@
 </div>
 <!--/Main Container-->
 <!-- Scripts-->
+<script src="./assets/js/script.js"></script>
 <script type="module" src="./assets/js/ubuntu.js"></script>
 </body>
 </html>
