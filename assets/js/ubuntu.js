@@ -2,9 +2,10 @@ import {Sidebar} from "./components/Sidebar.js";
 import {ApplicationList} from "./components/ApplicationList.js";
 import {ApplicationStoreSlider} from "./components/ApplicationStoreSlider.js";
 import {Navbar} from "./components/Navbar.js";
-import {Login} from "./components/Login.js";
+import {Login as Javascript, Login} from "./components/Login.js";
 import {Popup} from "./components/Popup.js";
 import {ApplicationStore} from "./components/ApplicationStore.js";
+import {JavaScriptNotes} from "./components/JavaScriptNotes.js";
 
 /**
  *
@@ -29,13 +30,14 @@ class App{
      */
     static init(){
         //Initializing the components classes here.
-        new Popup().render();
+        //new Popup().render();
         new ApplicationList().render();
         new ApplicationStore().render();
         new Navbar().render(); // C
         new Sidebar().render();
         new ApplicationStoreSlider().render();
         new Login().render();
+        new JavaScriptNotes().render();
     }
 }
 
