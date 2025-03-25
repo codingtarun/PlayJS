@@ -7,8 +7,6 @@
  *
  */
 
-console.log("LOADED");
-
 /**
  *
  * How is JavaScript executed?
@@ -201,4 +199,175 @@ console.log("LOADED");
  */
 
 
+/**
+ *
+ * Functions VS Methods :
+ *
+ *
+ *
+ *
+ * => Storing a function as a property of an object.
+ *
+ */
 
+
+const js = { // This is an object
+    greetMsg : function() { // this is a function stored in a key-value pair inside an object.
+        console.log("Hello World!");
+    }
+}
+
+js.greetMsg(); // accessing the function inside an object.
+
+// Another example of an function stored inside an object is the button properties .
+
+// const someBtn = document.getElementById("someBtn"); // Accessing the button using DOM.
+// someBtn.addEventListener("click", function() { // accessing the functions stored inside the button obj.
+//     console.log("Hello World!");
+// })
+
+
+/**
+ *
+ * Functions are object with some predefined properties.
+ *
+ */
+
+function funOne(){ //  function declaration example
+    console.log("Functions are object !");
+}
+
+console.log(typeof funOne);
+
+/**
+ *
+ * Storing  functions in a variables
+ *
+ */
+const funTwo = function (){ // Function expression example
+    console.log("Function stored in a variable");
+}
+
+funTwo();
+
+
+/**
+ *
+ * => Function Declaration :
+ *  1. Always hoisted to the top of the file and is initialized.
+ *  2. we can call functions even before it is declared.
+ *
+ *
+ * => Function Expression :
+ *  1. Hoisted at the top but not initialized.
+ *  2. Can't call function before defining it.
+ *
+ *
+ *
+ */
+
+
+/**
+ *
+ * Anonymous function : Function without a name.
+ * ex: we can use anonymous function with addEventListener property.
+ *
+ * Anonymous function are challenging to debug if it has some error as it doesn't have name.
+ *
+ *
+ */
+
+document.getElementById('btnAppStoreMinimize').addEventListener('click',() =>  {
+    // anonymous function is passed to a higher-order function i.e addEventListener
+    console.log('App StoreMinimize!');
+});
+
+/**
+ *
+ * Arrow function : Short form of function
+ *
+ */
+
+const funThree = () => {
+    console.log("Arrow function example");
+}
+
+funThree();
+
+const msg = "Shortest Function code";
+const funFour = () => msg;
+
+console.log(funFour());
+
+
+/**
+ *
+ * Rest Parameter : The rest parameter allows a function to accept an indefinite number of arguments as an array.
+ * It helps when we don't know how many arguments will be passed.
+ *
+ */
+
+
+function restFun(...num){ // Accepting inputs as array.
+    let sum = 0;
+    for(let i = 1; i < num.length; i++){
+            sum += num[i];
+    }
+    return sum;
+}
+
+console.log(restFun(2,4,5,6,8,6,4,3,3,3,4,45,5,5,5)); // Indefinite numbers of input
+
+/**
+ *
+ * => Functions inside a Function :
+ *  1. We can define a function inside another function, which is known as a nested function or inner function.
+ *  2. The inner function has access to the variables and parameters of the outer function.
+ *
+ */
+
+
+function outerFun(){
+    console.log("Outer fun!");
+    const innerFun = () => {
+        console.log("Inner fun!");
+    }
+    innerFun();
+}
+
+outerFun();
+
+
+/**
+ *
+ * => Callback functions :
+ * 1. A callback function is a function passed as an argument to another function.
+ * 2. It is executed after the main function has finished its operation.
+ * 3. Callbacks are commonly used in asynchronous programming, such as handling events, reading files, or making API requests.
+ *
+ */
+
+function greetFun(msg,callbackFun){
+    callbackFun();
+    console.log(msg);
+}
+
+function showGreetMsg(){
+    console.log("A call back function");
+}
+
+greetFun("This is a callback function example",showGreetMsg)
+
+
+/**
+ *
+ * bind() :  LATER
+ *
+ */
+
+
+/**
+ *
+ * DOM :
+ *
+ */
