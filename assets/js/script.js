@@ -1,6 +1,6 @@
 /**
  *
- * JavaScript: A dynamic weekly types programming language which compile on runtime.
+ * JavaScript: A dynamic,weekly types programming language which compile on runtime.
  * => Created to make Webpages dynamic.
  * => Originally named 'LiveScript' but due to the popularity of 'Java' back in the days , it is renamed to 'JavaScript'.
  * => Java & JavaScript has nothing in common.
@@ -368,6 +368,148 @@ greetFun("This is a callback function example",showGreetMsg)
 
 /**
  *
- * DOM :
+ * DOM : The Document Object Model (DOM) is a programming interface for web documents.
+ * It represents the HTML document as a tree structure, allowing JavaScript to manipulate elements dynamically.
+ * 1. It represents HTML as object that JS can interact with.
+ * 2. It allows dynamic updates without reloading the page.
+ * 3. JS provides many functionalities to access the HTML DOM elements and modify them.
+ * 4. DOM automatically create `Element Node Tree` for every HTML structure in the page.
+ *
+ *
+ * => document: Represents the DOm object and allows JS to interact with the HTML elements.
+ * => window: Represents the browser window and provides access to global functions, properties and events etc.It is top most object of which `document` is an object
+ *
+ */
+
+
+/**
+ *
+ * Attributes & Properties :
+ * 1.
+ *
+ *
+ */
+
+
+/**
+ *
+ * JavaScript Asynchronous Programming:
+ * 1. JS is a single threaded programming language i.e it executes one task at a time.
+ * 2. JS handles time consuming tasks without blocking the thread using the concept of asynchronous programming.
+ *
+ *
+ *
+ */
+
+let count = 0;
+
+
+console.log(count);
+
+setTimeout(()=>{ // A sync timer which will execute the code after 2 seconds
+    for (let i = 1; i < 10000; i++){
+        count +=i;
+    }
+    console.log(count);
+}, 2000);
+
+console.log("Executed"); // this code will not be blocked now
+
+
+/**
+ * Event loop: The Event Loop is the mechanism that manages asynchronous tasks like setTimeout(), Promises, and API calls.
+ * 1. Runs all the time and check if we have pending tasks.
+ *
+ *
+ * => Call stack: JS execution stack / follows Last In , First Out execution.
+ * 1. When a function is called , it is added (pushed) to the top of the stack.
+ * 2. When execution finished it is removed (popped) from the stack.
+ * 3. JS always executes the top function in stack before moving to next one.
+ *
+ */
+
+
+function first() {
+    second();
+    console.log("First function");
+}
+
+function second() {
+    third();
+    console.log("Second function");
+}
+
+function third() {
+    console.log("Third function");
+}
+
+first();
+
+/**
+ *
+ * 🔍 Execution Flow
+ * ✅ first() is called → Added to Stack
+ * ✅ second() is called inside first() → Added to Stack
+ * ✅ third() is called inside second() → Added to Stack
+ * ✅ console.log("Third function") executes → third() is removed
+ * ✅ console.log("Second function") executes → second() is removed
+ * ✅ console.log("First function") executes → first() is removed
+ *
+ *
+ * 🛠 Call Stack Step-by-Step
+ *
+ * 1. first() → PUSHED
+ * 2. second() → PUSHED
+ * 3. third() → PUSHED
+ * 4. console.log("Third function") → EXECUTED
+ * 5. third() → POPPED
+ * 6. console.log("Second function") → EXECUTED
+ * 7. second() → POPPED
+ * 8. console.log("First function") → EXECUTED
+ * 9. first() → POPPED
+ *
+ */
+
+/**
+ *
+ * JS handles Async code with the help of WebAPIs & Event Loop , not the call Stack.
+ *
+ * 📌 Async functions (setTimeout, fetch, Promises) do NOT block the Call Stack.
+ *
+ */
+
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Inside setTimeout");
+}, 0);
+
+console.log("End");
+
+/**
+ *
+ * 🔍 Execution Flow
+ * ✅ "Start" is logged → Call Stack executes it
+ * ✅ setTimeout() moves to Web API, Call Stack ignores it for now
+ * ✅ "End" is logged
+ * ✅ Event Loop moves setTimeout() callback to Call Stack after everything is done
+ *
+ * => The Event Loop continuously checks if the Call Stack is empty.
+ * => If it is, it moves pending tasks from the queues to the Call Stack for execution.
+ *
+ *
+ * 6️⃣ Summary & Key Takeaways
+ * ✅ Call Stack follows Last In, First Out (LIFO)
+ * ✅ Each function call is pushed to the Call Stack and removed when done
+ * ✅ Deep recursion without a base case leads to Stack Overflow
+ * ✅ Asynchronous functions (setTimeout, fetch, Promises) do NOT block the Call Stack
+ * ✅ JavaScript uses the Event Loop to handle async operations
+ *
+ */
+
+
+/**
+ *
+ * Promise :
  *
  */
