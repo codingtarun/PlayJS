@@ -1,9 +1,34 @@
+"use strict";
+
+import {ubuntuApplicationList} from "./data/ubuntu_application_list.js";
+/**
+ *
+ * JS Strict mode : JavaScript strict mode is a feature that helps catch common coding mistakes and makes the code more secure.
+ * It was introduced in ECMAScript 5 (ES5) and prevents the use of unsafe or bad coding practices.
+ * => It has to be the first thing in the file/script.
+ * => We can also enable strict mode in a function also.
+ * => It gives us visible errors, unlike the case where JS will fail silently.
+ * =>
+ *
+ *
+ */
+
+
+
 /**
  *
  * JavaScript: A dynamic,weekly types programming language which compile on runtime.
  * => Created to make Webpages dynamic.
  * => Originally named 'LiveScript' but due to the popularity of 'Java' back in the days , it is renamed to 'JavaScript'.
  * => Java & JavaScript has nothing in common.
+ * => In 1996 Microsoft released their own version of 'JavaScript' named jScript.
+ * => It created a lot of confusion , as developer has to write different code of different browsers.
+ * => In 1997 , ECMA released ECMAScript 1 (ES1) , the first standardization of Scripting langauge.
+ * => JavaScript implements the Syntax & features set by the ECMA.
+ * => ECMA is the standard and JavaScript is the implementation.
+ * => In 2009 ES5 was released with a lot of new features.
+ * => ES6/ECMA2015 was released in 2015, which was the biggest update in JS language.
+ * => Starting from ES6/ES2015 , a newer version if JS is released every year.
  *
  */
 
@@ -109,7 +134,6 @@
  *          ANY MANY MORE
  *
  */
-
 
 /**
  *
@@ -513,3 +537,188 @@ console.log("End");
  * Promise :
  *
  */
+
+
+/**
+ *
+ *  Type Conversion and Coercion :
+ *  1. Type conversion (also called type casting) is when we manually convert a value from one type to another using JavaScript methods.
+ *  2. Type coercion happens automatically when JavaScript tries to perform operations between different types.
+ *
+ */
+
+
+/**
+ *
+ * In JavaScript, every value has an inherent Boolean value—either truthy or falsy. This is important when working with conditions, logical operations, and implicit type conversions.
+ * => A falsy value is a value that evaluates to false when used in a boolean context (like inside an if statement).
+ * => There are only 5 falsy value : 0, null, NaN, undefined, ''
+ * => A truthy value is any value other than falsy. It evaluates to true when used in a boolean context.
+ * => Any other value other than the falsy value is truthy value.
+ *
+ */
+
+/**
+ *
+ * Boolean Operations :
+ * Boolean operations in JavaScript are used for logical decision-making.
+ * These operations return either true or false and are commonly used in conditions, loops, and expressions.
+ *
+ *
+ * 1. AND : &&
+ * 2. OR : ||
+ * 3. NOT : !
+ */
+
+
+/**
+ *
+ * Statement vs Expression :
+ * 1. An expression is any valid JavaScript code that produces a value. It can be stored in a variable, passed to a function, or used in an operation.
+ * => Expressions always return a value!
+ * Examples :
+ * a. 10 + 5   // Expression (evaluates to 15)
+ * b. "Hello"  // Expression (evaluates to "Hello")
+ * c. true     // Expression (evaluates to true)
+ * d. 5 * 10   // Expression (evaluates to 50)
+ *
+ *
+ * 2. A statement is an instruction that performs an action but does not necessarily return a value.
+ * => Statements do something but do not necessarily return a value.
+ * Example :
+ * // Statement
+ * if (result > 5) {  // ❌ Statement (performs action, no return value)
+ *     console.log("Greater than 5");
+ * }
+ *
+ *
+ */
+
+
+/**
+ *
+ * Ternary Operator : The ternary operator in JavaScript is a shorthand for if-else statements.
+ * It is also known as the conditional operator because it evaluates a condition and returns one of two values based on whether the condition is true or false.
+ * => Syntax : condition ? expression_if_true : expression_if_false;
+ */
+
+/**
+ *
+ * Array : An array in JavaScript is a special variable that can store multiple values in a single variable.
+ * => Arrays are zero-indexed, meaning the first element is at index 0.
+ * => JS support Multidimensional array i.e arrays within arrays.
+ * Array Properties :
+ * 1. length : returns the length of the array.
+ *
+ * Array Methods : Here are some commonly used methods for working with arrays:
+ * 1. push() – Add an Element to the End
+ * 2. pop() – Remove the Last Element
+ * 3. unshift() – Add an Element to the Beginning
+ * 4. shift() – Remove the First Element
+ * 5. concat() – Merge Two Arrays
+ * 6. slice() – Extract a Portion of an Array / slice(start, end): Returns elements from start to end-1.
+ * 7. splice() – Add or Remove Elements  / splice(start, deleteCount, item1, item2, ...) / Here, it removes 2 elements from index 2 and adds "a", "b".
+ * 8. indexOf() – Find Index of an Element
+ * 9. includes() – Check If an Element Exists
+ * 10. reverse() – Reverse the Array
+ * 11. sort() – Sort an Array
+ *
+ *
+ * Looping through the array :
+ * 1. For loop :
+ * let cities = ["New York", "London", "Paris"];
+ * for (let i = 0; i < cities.length; i++) {
+ *     console.log(cities[i]);
+ * }
+ *
+ * 2. forEach :
+ * cities.forEach(city => console.log(city));
+ *
+ * 3. map() : creates a new array based on the condition passed
+ * let numbers = [1, 2, 3];
+ * let squared = numbers.map(num => num * num);
+ * console.log(squared); // [1, 4, 9]
+ *
+ * 4.
+ *
+ *
+ */
+
+
+
+/**
+ *
+ * Object: An object in JavaScript is a collection of key-value pairs, where each key is a string (property name) and
+ * each value can be any data type (string, number, array, function, another object, etc.).
+ * => Objects allow you to group related data together.
+ *
+ *
+ * => Accessing Object Properties
+ * 1. Dot Notation (Most Used)
+ * 2. Bracket Notation (When property names have spaces or special characters)
+ *
+ * => Modifying Object Properties
+ * 1. Change Existing Property
+ * 2. Add a New Property
+ * 3. Delete a Property
+ *
+ *
+ * => Object Methods (Functions inside Objects)
+ * 1. Objects can have functions as properties, called methods.
+ *
+ * => Looping Through an Object
+ * 1. for...in Loop
+ *
+ * => Object Methods : JavaScript provides useful built-in methods for working with objects.
+ * 1. Object.keys() – Get All Keys
+ * 2. Object.values() – Get All Values
+ * 3. Object.entries() – Get Key-Value Pairs
+ * 4. Object.assign() – Copy an Object
+ * 5. Object.freeze() – Prevent Modifications
+ * 6. Object.seal() – Prevent Adding/Deleting, But Allows Modifying
+ *
+ *
+ * => Nested Objects : Objects can contain other objects.
+ *
+ * => Array of Objects: You can store multiple objects inside an array.
+ *
+ *
+ *
+ */
+
+
+/**
+ *
+ * Destructuring arrays : Array destructuring allows you to extract values from an array and store them in separate variables in a clean and readable way.
+ * => Original Array is not destroyed , but the new arrays are created with the data from original array.
+ * => We can take as much elements we want to take out of the array.
+ * => ...rest : we can use rest parameter for rest of the array element.
+ * => we can skip an element by keeping the empty space at the sequence.
+ */
+console.log("ARRAY DESTRUCTURING");
+//console.log(ubuntuApplicationList);
+
+let [a,,b,c,...rest] = ubuntuApplicationList;
+
+[b,a] = [a,b]; // swapping the data
+
+console.log(a,b,c,rest);
+
+/**
+ *
+ * Object Destructuring : Object destructuring allows you to extract values from an object and store them in separate variables in a clean and readable way.
+ *
+ *
+ */
+console.log("OBJECT DESTRUCTURING");
+
+console.log(typeof a);
+
+const {title,link} = a;
+
+console.log(title,link);
+
+for(let app of ubuntuApplicationList){
+    const {title: appName,link : appUrl, appRating= 5} = app; // giving default value if property doesn't exists.
+    console.log({appName,appUrl,appRating});
+}

@@ -7,6 +7,7 @@
  **/
 
 export const ubuntuApplicationList = [
+    // this is an array consisting objects, which contains the information about the popular Ubuntu Apps.
   {
     "id": 1,
     "title": "LibreOffice",
