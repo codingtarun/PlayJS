@@ -13,7 +13,6 @@ export class Navbar{
          *
          */
         this.dateTime = document.getElementById('date_time');
-        console.log("Navbar Class");
     }
     generateDateTime(){
         // Generating current date & time.

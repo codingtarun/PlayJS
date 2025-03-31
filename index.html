@@ -115,6 +115,9 @@
                     <li>
                         <a href="#" id="appToggle"><img src="./assets/images/app-store.png" alt="" srcset="" class="h-auto w-full"></a>
                     </li>
+                    <li>
+                        <a href="#" id="mapifyToggle"><img src="./assets/images/location-pin.png" alt="" srcset="" class="h-auto w-full"></a>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -174,16 +177,16 @@
             <!-- App store -->
             <div class="bg-gray-100 hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-3/4 w-3/4 rounded-xl" id="appStore" draggable="true">
                 <div class="grid grid-rows-[auto_minmax(0,2fr)] h-full w-full">
-                    <div class="bg-gray-200 py-1 px-2 hover:cursor-grab flex justify-between items-center">
+                    <div class="bg-gray-300 py-1 px-2 hover:cursor-grab flex justify-between items-center">
                         <div><h3 class="text-gray-700 font-semibold">App Store</h3></div>
                         <div class="flex justify-between items-center border-2 bg-white border-gray-300">
                             <label for="searchAppStore" class="w-10 text-gray-500 flex justify-center"><i class="fas fa-search"></i></label>
                             <input type="text" name="searchAppStore" id="searchAppStore" class="flex-1 bg-transparent outline-none px-2 text-gray-900" autocomplete="off">
                         </div>
                         <div class="flex justify-between items-center gap-2">
-                            <button class="bg-gray-300 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-600" id="btnAppStoreMinimize"><i class="text-[8px] font-light far fa-window-minimize"></i></button>
-                            <button class="bg-gray-300 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMaximize"><i class="text-[8px] font-light far fa-window-maximize"></i></button>
-                            <button class="bg-gray-300 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreClose"><i class="text-[8px] fas font-light fa-times"></i></button>
+                            <button class="bg-gray-200 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-600" id="btnAppStoreMinimize"><i class="text-[8px] font-light far fa-window-minimize"></i></button>
+                            <button class="bg-gray-200 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreMaximize"><i class="text-[8px] font-light far fa-window-maximize"></i></button>
+                            <button class="bg-gray-200 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnAppStoreClose"><i class="text-[8px] fas font-light fa-times"></i></button>
                         </div>
                     </div>
                     <div class="bg-gray-100 flex h-full">
@@ -307,57 +310,20 @@
             </div>
             <!-- /App store-->
             <!--Desktop-->
-                <div class="absolute top-0 left-0 h-full w-full p-8" id="desktop">
-                    <!--Desktop Icons-->
-                    <ul class="flex flex-col justify-center items-start gap-5">
-                        <li class="flex flex-col justify-center items-center gap-2 group opacity-98 hover:cursor-pointer hover:opacity-100" id="javaScriptNotesIcon">
-                            <img src="./assets/images/note.png" alt="" srcset="" class="h-10 w-10 group-hover:scale-102">
-                            <span class="text-xs text-center leading-3">JavaScript <br>Notes</span>
-                        </li>
-                    </ul>
-                    <!--/Desktop Icons-->
-                    <!--JavaScript Notes-->
-                        <div class="bg-white hidden text-black absolute top-0 left-0 h-full w-full flex flex-col" id="javaScriptNotesWindow">
-                            <div class="bg-[#312f2f] h-[40px] flex flex-row justify-between items-center p-0.5 text-white">
-                                <div>
-                                    <ul>
-                                        <li>JavaScript Notes</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <ul class="flex flex-row justify-center items-center gap-3">
-                                        <li>
-                                            <button><i class="fas fa-search"></i></button>
-                                        </li>
-                                        <li>
-                                            <button><i class="fas fa-list"></i></button>
-                                            <button><i class="fas fa-caret-down"></i></button>
-                                        </li>
-                                        <li>
-                                            <button><i class="fas fa-search"></i></button>
-                                        </li>
-                                        <li>
-                                            <button><i class="fas fa-window-minimize"></i></button>
-                                        </li>
-                                        <li>
-                                            <button><i class="far fa-window-maximize"></i></button>
-                                        </li>
-                                        <li>
-                                            <button><i class="fas fa-times"></i></button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="bg-[#f3f1ef] flex-1 flex">
-                                <div class="bg-[#f2f2f2] flex-1">
-                                    ABC
-                                </div>
-                                <div class="bg-white flex-5">
-                                    MAIN CONTENT
-                                </div>
+                <div class="absolute top-0 left-0 h-full w-full z-10" id="desktop">
+                    <div class="grid grid-rows-[auto_minmax(0,2fr)] h-full w-full" id="mapify">
+                        <div class="bg-gray-300 py-1 px-2 hover:cursor-grab flex justify-between items-center">
+                            <div><h3 class="text-gray-700 font-semibold">Mapify</h3></div>
+                            <div class="flex justify-between items-center gap-2">
+                                <button class="bg-gray-200 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-600" id="btnMapifyMinimize"><i class="text-[8px] font-light far fa-window-minimize"></i></button>
+                                <button class="bg-gray-200 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnMapifyMaximize"><i class="text-[8px] font-light far fa-window-maximize"></i></button>
+                                <button class="bg-gray-200 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnMapifyClose"><i class="text-[8px] fas font-light fa-times"></i></button>
                             </div>
                         </div>
-                    <!--JavaScript Notes-->
+                        <div class="bg-gray-100 flex h-full text-amber-800">
+                            APP INTERFACE HERE
+                        </div>
+                    </div>
                 </div>
             <!--/Desktop-->
         </div>
@@ -367,7 +333,7 @@
 </div>
 <!--/Main Container-->
 <!-- Scripts-->
-<script type="module" src="./assets/js/script.js"></script>
+<!--<script type="module" src="./assets/js/script.js"></script>-->
 <script type="module" src="./assets/js/ubuntu.js"></script>
 </body>
 </html>
