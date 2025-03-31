@@ -19,7 +19,6 @@ export class CheckImageExists {
             img.src = imagePath;
             img.onload = () => resolve(imagePath);  // Return an image path if found
             img.onerror = () => resolve(fallbackPath); // Return fallback if not found
-            console.log(img.onload);
         });
     }
 }

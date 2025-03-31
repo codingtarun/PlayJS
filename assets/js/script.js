@@ -1,6 +1,5 @@
 "use strict";
 
-import {ubuntuApplicationList} from "./data/ubuntu_application_list.js";
 /**
  *
  * JS Strict mode : JavaScript strict mode is a feature that helps catch common coding mistakes and makes the code more secure.
@@ -8,12 +7,10 @@ import {ubuntuApplicationList} from "./data/ubuntu_application_list.js";
  * => It has to be the first thing in the file/script.
  * => We can also enable strict mode in a function also.
  * => It gives us visible errors, unlike the case where JS will fail silently.
- * =>
- *
  *
  */
 
-
+import {ubuntuApplicationList} from "./data/ubuntu_application_list.js";
 
 /**
  *
@@ -59,7 +56,7 @@ import {ubuntuApplicationList} from "./data/ubuntu_application_list.js";
 /**
  *
  * => JS is executed on hosted environment.
- * => Most popular JS engines are v*8 from Google & spider monkey from firefox.
+ * => Most popular JS engines are v8 from Google & spider monkey from firefox.
  * => JS can't access local files.
  * => Modified version of V8 is run on dedicated machines, working as webservers.
  *
@@ -108,6 +105,8 @@ import {ubuntuApplicationList} from "./data/ubuntu_application_list.js";
  *      2.1. Object : Collection of key-value pair .
  *      2.2. Array : A list of values.
  *      2.3. Function : A reusable block of code.
+ *
+ * Since Arrays & Functions are Objects in JS , we can say that to categories i.e primitive & Object.
  *
  *
  *
@@ -162,7 +161,7 @@ import {ubuntuApplicationList} from "./data/ubuntu_application_list.js";
  *          })
  *
  *
- * => Function arguments and parameters : A function can accept parameters as per the requirment.
+ * => Function arguments and parameters : A function can accept parameters as per the requirement.
  *          const abc = (num1,num2) => {
  *              return num1 + num2;
  *          }
@@ -273,7 +272,6 @@ const funTwo = function (){ // Function expression example
 }
 
 funTwo();
-
 
 /**
  *
@@ -400,7 +398,7 @@ greetFun("This is a callback function example",showGreetMsg)
  * 4. DOM automatically create `Element Node Tree` for every HTML structure in the page.
  *
  *
- * => document: Represents the DOm object and allows JS to interact with the HTML elements.
+ * => document: Represents the `DOM object` and allows JS to interact with the HTML elements.
  * => window: Represents the browser window and provides access to global functions, properties and events etc.It is top most object of which `document` is an object
  *
  */
@@ -418,6 +416,7 @@ greetFun("This is a callback function example",showGreetMsg)
 /**
  *
  * JavaScript Asynchronous Programming:
+ *
  * 1. JS is a single threaded programming language i.e it executes one task at a time.
  * 2. JS handles time consuming tasks without blocking the thread using the concept of asynchronous programming.
  *
@@ -441,6 +440,7 @@ console.log("Executed"); // this code will not be blocked now
 
 
 /**
+ *
  * Event loop: The Event Loop is the mechanism that manages asynchronous tasks like setTimeout(), Promises, and API calls.
  * 1. Runs all the time and check if we have pending tasks.
  *
@@ -718,7 +718,115 @@ const {title,link} = a;
 
 console.log(title,link);
 
-for(let app of ubuntuApplicationList){
-    const {title: appName,link : appUrl, appRating= 5} = app; // giving default value if property doesn't exists.
-    console.log({appName,appUrl,appRating});
+
+/**
+ *
+ * for-of loop : The for...of loop is used to iterate over iterable objects like arrays, strings, maps, sets, and more.
+ * It provides a simpler way to loop through values without needing an index.
+ *
+ */
+// for(let app of ubuntuApplicationList){
+//     const {title: appName,link : appUrl, appRating= 5} = app; // giving default value if property doesn't exists.
+//     console.log({appName,appUrl,appRating});
+// }
+
+/**
+ *
+ * Spread Operator : The spread operator (...) is used to expand elements of an array, object, or iterable into individual elements.
+ * It is useful for copying, merging, and passing values.
+ *
+ * =>
+ *
+ */
+
+const arrayOne = [1,2,3,4,5];
+const arrayTwo = [6,7,8,9,10];
+
+const arrayOneCopy = [...arrayOne];
+const arrayOneTwoCombined = [...arrayOne,...arrayTwo];
+
+console.log(arrayOneCopy);
+console.log(arrayOneTwoCombined)
+
+// We can also pass these array value to a function
+
+const getSum = (a,b,c,d,e) => {
+    return a+b+c+d+e;
 }
+
+console.log(getSum(...arrayTwo));
+
+
+/**
+ *
+ * Rest Pattern & Parameters : The rest pattern (...) is the opposite of the spread operator. While spread expands elements, rest collects multiple elements into an array.
+ * => Rest Parameter in Functions : Rest parameters allow us to pass multiple arguments into a function, which are collected as an array.
+ * => Rest Pattern in Arrays : Rest can extract values while collecting the remaining values in an array.
+ * => Rest Pattern in Objects : Rest can extract specific properties while collecting the rest into a new object.
+ */
+
+
+/**
+ *
+ * Short-Circuiting in JavaScript (&& and ||)  : Short-circuiting happens when logical operators (&& and ||) return a value without evaluating the entire expression.
+ * => || (OR Operator) - Returns First Truthy Value
+ *      a. If the first operand is truthy, it returns that value.
+ *      b. If the first operand is falsy, it returns the second operand.
+ *
+ * => && (AND Operator) - Returns First Falsy Value
+        a. If the first operand is falsy, it returns that value.
+ *      b. If the first operand is truthy, it checks the second operand and returns it.
+ */
+
+
+/**
+ *
+ * The Nullish Coalescing Operator (??) is used to return the first value that is not null or undefined.
+ * It is useful for setting default values while avoiding false positives from falsy values like 0, "", or false.
+ *
+ * Why us Nullish instead of || short circuiting :  *
+ * 1. || treats falsy values (0, "", false) as invalid and selects the second value.
+ * 2. ?? only checks for null or undefined, so 0 is considered valid.
+ *
+ */
+
+
+/**
+ *
+ * Optional Chaining :
+ * Optional chaining (?.) is a feature in JavaScript that allows you to safely access deeply nested properties without causing errors if a property is undefined or null.
+ *
+ */
+
+const user = { name: "Alice", address: { city: "New York" } };
+
+console.log(user?.address?.city);   // ✅ "New York"
+console.log(user?.profile?.age);    // ✅ undefined (No error!)
+
+
+/**
+ *
+ * Set : A Set in JavaScript is a special type of collection that stores unique values (no duplicates allowed).
+ *
+ *
+ */
+
+// creating a set
+const setOne = new Set([1,2,3,4,4,4,4,5,5,5]); // duplicate values will be removed
+console.log(setOne);
+
+// converting set to array :
+const setArray = Array.from(setOne);
+console.log(setArray);
+
+
+/**
+ *
+ * A Map in JavaScript is a data structure that allows you to store key-value pairs, similar to objects, but with some advantages:
+ * ✅ Keys can be any type (objects, functions, etc.)
+ * ✅ Maintains insertion order
+ * ✅ Easier to iterate over
+ *
+ */
+
+// creating a new map :
