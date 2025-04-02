@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body class=" relative h-svh bg-[url('https://codingtarun.github.io/PlayJS/assets/images/ubuntu_bg.jpg')] font-[ubuntu] bg-cover bg-center bg-no-repeat text-white overflow-hidden">
@@ -311,7 +312,7 @@
             <!-- /App store-->
             <!--Desktop-->
                 <div class="absolute top-0 left-0 h-full w-full z-10" id="desktop">
-                    <div class="grid grid-rows-[auto_minmax(0,2fr)] h-full w-full" id="mapify">
+                    <div class="grid-rows-[auto_minmax(0,2fr)] h-full w-full grid" id="mapify">
                         <div class="bg-gray-300 py-1 px-2 hover:cursor-grab flex justify-between items-center">
                             <div><h3 class="text-gray-700 font-semibold">Mapify</h3></div>
                             <div class="flex justify-between items-center gap-2">
@@ -320,8 +321,11 @@
                                 <button class="bg-gray-200 rounded-full flex justify-center items-center p-1.5 hover:cursor-pointer text-gray-700" id="btnMapifyClose"><i class="text-[8px] fas font-light fa-times"></i></button>
                             </div>
                         </div>
-                        <div class="bg-gray-100 flex h-full text-amber-800">
-                            APP INTERFACE HERE
+                        <div class="bg-gray-100 grid grid-cols-[30%_70%] h-full p-1">
+                            <div class="bg-gray-900 h-full">Sidebar</div>
+                            <div class="bg-gray-100 h-full">
+                                <div id="map" class="h-full"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -333,8 +337,10 @@
 </div>
 <!--/Main Container-->
 <!-- Scripts-->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <!--<script type="module" src="./assets/js/script.js"></script>-->
 <script type="module" src="./assets/js/ubuntu.js"></script>
+
 </body>
 </html>
 </html>
