@@ -806,27 +806,76 @@ console.log(user?.profile?.age);    // ✅ undefined (No error!)
 
 /**
  *
- * Set : A Set in JavaScript is a special type of collection that stores unique values (no duplicates allowed).
+ * Set : JavaScript Sets are a powerful data structure for storing unique values efficiently.
+ * They are great for removing duplicates, tracking unique items, and performing set operations like union and intersection.
  *
  *
  */
 
 // creating a set
-const setOne = new Set([1,2,3,4,4,4,4,5,5,5]); // duplicate values will be removed
+const setArray = [1,2,3,4,4,4,4,5,5,5];
+const setOne = new Set(setArray); // duplicate values will be removed
 console.log(setOne);
 
 // converting set to array :
-const setArray = Array.from(setOne);
-console.log(setArray);
+const setArrayDuplicate = Array.from(setOne);
+console.log(setArrayDuplicate);
 
+// Checking if entry exists :
 
+console.log(setOne.has(4));
+
+// Performing simple set operations
+const setTwo = new Set([1,2,3,4,5,6,7,8]);
+const setThree = new Set([0,2,4,6,7,8,9,10]);
+console.log(setTwo);
+console.log(setThree);
+
+// Creating a new set with unique values from set one and two
+const setCombine = new Set([...setTwo,...setThree]);
+console.log(setCombine);
+
+// Showing common elements from set
+
+const setIntersection = new Set([...setTwo].filter(num => setThree.has(num)));
+
+// Showing the different elements from the set
+
+const setDifference = new Set([...setTwo].filter(num => !setThree.has(num)));
+
+console.log(setIntersection);
+console.log(setDifference);
 /**
  *
  * A Map in JavaScript is a data structure that allows you to store key-value pairs, similar to objects, but with some advantages:
- * ✅ Keys can be any type (objects, functions, etc.)
+ * ✅ Keys can be any type (objects, functions, arrays  etc.)
  * ✅ Maintains insertion order
  * ✅ Easier to iterate over
  *
  */
 
 // creating a new map :
+const mapOne = new Map();
+// inserting value in map
+mapOne.set("one","This is a Map example");
+// Objects / arrays functions as a key
+const mapArrayKey =  [1,2,3];
+mapOne.set(mapArrayKey,"Array as an key");
+const mapObjectKey =  {'name':'Tarun Chauhan'};
+mapOne.set(mapObjectKey,"Object as an key");
+// retrieve the value
+console.log(mapOne.get("one"));
+console.log(mapOne.get(mapArrayKey));
+console.log(mapOne.get(mapObjectKey));
+// Check if key exists
+console.log(mapOne.has("one"));
+
+// Maps are great for storing configurations, caching data, or keeping track of unique keys dynamically.
+const systemConfig = new Map();
+systemConfig.set('theme','dark');
+systemConfig.set('role', 'admin');
+// Quick checks
+if(systemConfig.has("role")){
+    console.log("Role assigned to user");
+}
+
