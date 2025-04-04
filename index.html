@@ -19,7 +19,7 @@
 <body class=" relative h-svh bg-[url('https://codingtarun.github.io/PlayJS/assets/images/ubuntu_bg.jpg')] font-[ubuntu] bg-cover bg-center bg-no-repeat text-white overflow-hidden">
 
 <!--Login Screen-->
-<div class="hidden flex-col justify-between px-3 py-1 items-center absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-r from-[#77216F] via-[#BB3B0E] to-[#E95420]" id="loginScreen">
+<div class="hidden flex-col justify-between px-3 py-1 items-center absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#77216F] via-[#BB3B0E] to-[#E95420] z-30" id="loginScreen">
     <div class="text-xs flex justify-between items-center w-full">
         <div></div>
         <div>Date Time</div>
@@ -176,7 +176,7 @@
             </div>
             <!--/About This Ubuntu App-->
             <!-- App store -->
-            <div class="bg-gray-100 hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-3/4 w-3/4 rounded-xl" id="appStore" draggable="true">
+            <div class="bg-gray-100 hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-3/4 w-3/4 rounded-xl z-20" id="appStore" draggable="true">
                 <div class="grid grid-rows-[auto_minmax(0,2fr)] h-full w-full">
                     <div class="bg-gray-300 py-1 px-2 hover:cursor-grab flex justify-between items-center">
                         <div><h3 class="text-gray-700 font-semibold">App Store</h3></div>
@@ -322,7 +322,32 @@
                             </div>
                         </div>
                         <div class="bg-gray-100 grid grid-cols-[30%_70%] h-full p-1">
-                            <div class="bg-gray-900 h-full">Sidebar</div>
+                            <div class="bg-gray-900 h-full p-3">
+                                <form class="grid grid-cols-1 grid-rows-4 lg:grid-cols-2 lg:grid-rows-2 border-l-4 border-green-500 gap-2 text-sm">
+                                    <div class="flex flex-row align-middle items-center p-1">
+                                        <label for="type" class="w-1/2 p-1">Type</label>
+                                        <select class="w-1/2 bg-gray-800 p-1" name="type" id="type">
+                                            <option value="">Type</option>
+                                            <option value="running">Running</option>
+                                            <option value="walking">Walking</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-r align-middle items-center p-1">
+                                        <label class="w-1/2 p-1" for="distance">Distance</label>
+                                        <input class="w-1/2 p-1 border-1 bg-gray-800"  type="text" name="distance" id="distance" placeholder="km"/>
+                                    </div>
+                                    <div class="flex flex-row align-middle items-center p-1">
+                                        <label class="w-1/2 p-1" for="duration">Duration</label>
+                                        <input class="w-1/2 p-1 bg-gray-800" type="text" name="duration" id="duration" placeholder="min"/>
+                                    </div>
+                                    <div class="flex flex-row align-middle items-center p-1">
+                                        <label class="w-1/2 p-1" for="cadence">Cadence</label>
+                                        <input class="w-1/2 p-1 bg-gray-800" type="text" name="cadence" id="cadence" placeholder="steps/min"/>
+                                    </div>
+                                </form>
+
+
+                            </div>
                             <div class="bg-gray-100 h-full">
                                 <div id="map" class="h-full"></div>
                             </div>
