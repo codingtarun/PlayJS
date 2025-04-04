@@ -1,1 +1,7 @@
 
+.popup-bg .leaflet-popup-content-wrapper {
+    background-color: #72afd3;
+}
+.popup-bg .leaflet-popup-tip{
+    background-color: #72afd3;
+}

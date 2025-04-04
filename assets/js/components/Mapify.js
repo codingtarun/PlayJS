@@ -7,8 +7,6 @@ export class Mapify{
         this.mapifyToggle = document.getElementById('mapifyToggle');
         this.latitude = '';
         this.longitude = '';
-
-
         this.map;
     }
     app(){
@@ -82,11 +80,18 @@ export class Mapify{
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(this.map);
 
-                L.marker(cords).addTo(this.map)
-                    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-                    .openPopup();
-                this.map.on('click', function(e) {
-                    console.log(e);
+
+                this.map.on('click', (mapEvent) =>  {
+                    const {lat,lng} = mapEvent.latlng; // object destructuring
+                    L.marker([lat,lng]).addTo(this.map)
+                        .bindPopup(L.popup({
+                            maxWidth:200,
+                            minWidth:200,
+                            autoClose:false,
+                            closeOnClick: false,
+                            className: 'popup-bg'
+                        }))
+                        .openPopup();
                 })
 
             }, err => {

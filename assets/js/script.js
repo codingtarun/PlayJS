@@ -794,7 +794,19 @@ console.log(getSum(...arrayTwo));
 /**
  *
  * Optional Chaining :
- * Optional chaining (?.) is a feature in JavaScript that allows you to safely access deeply nested properties without causing errors if a property is undefined or null.
+ * Optional chaining (?.) is a safe way to access deeply nested object properties without worrying about undefined or null values.
+ * If a property does not exist, it returns undefined instead of throwing an error.
+ *
+ * => syntax :
+ * a. object?.property
+ * b. object?.[expression]
+ * c. object?.method()
+ *
+ * ✅ If the property/method exists, it returns the value.
+ * ❌ If it doesn't exist, it returns undefined instead of throwing an error.
+ *
+ *
+ *
  *
  */
 
