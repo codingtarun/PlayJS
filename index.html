@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayJS — Tarun's JavaScript Playground</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body
+    class="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-yellow-300 selection:text-slate-900"
+  >
+    <!-- Nav -->
+    <header
+      class="sticky top-0 z-50 backdrop-blur bg-slate-950/70 border-b border-slate-800"
+    >
+      <nav
+        class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <a href="/" class="font-mono text-lg font-bold tracking-tight">
+          <span class="text-yellow-400">{</span> PlayJS
+          <span class="text-yellow-400">}</span>
+        </a>
+        <ul class="hidden sm:flex items-center gap-8 text-sm text-slate-300">
+          <li>
+            <a href="#about" class="hover:text-yellow-400 transition">About</a>
+          </li>
+          <li>
+            <a href="#projects" class="hover:text-yellow-400 transition"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/codingtarun/PlayJS"
+              class="hover:text-yellow-400 transition"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-6 pt-24 pb-20 text-center">
+      <p class="font-mono text-sm text-yellow-400 mb-4">
+        // learning in public
+      </p>
+      <h1
+        class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight"
+      >
+        A living playground <br class="hidden sm:block" />
+        for <span class="text-yellow-400">JavaScript</span>.
+      </h1>
+      <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed">
+        Hi, I'm Tarun — a Laravel developer leveling up into full-stack Node +
+        React. PlayJS is where I build, break, and document one small thing at a
+        time.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="#projects"
+          class="px-6 py-3 rounded-lg bg-yellow-400 text-slate-900 font-semibold hover:bg-yellow-300 transition"
+        >
+          Browse Projects
+        </a>
+        <a
+          href="https://github.com/codingtarun/PlayJS"
+          class="px-6 py-3 rounded-lg border border-slate-700 hover:border-yellow-400 hover:text-yellow-400 transition"
+        >
+          View on GitHub →
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold mb-6">What is PlayJS?</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-yellow-400 font-mono text-sm mb-2">01</div>
+          <h3 class="font-semibold mb-2">One branch per day</h3>
+          <p class="text-sm text-slate-400">
+            Each topic or mini-app lives on its own
+            <span class="font-mono text-slate-300">day_N</span> branch — small,
+            focused, shippable.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-yellow-400 font-mono text-sm mb-2">02</div>
+          <h3 class="font-semibold mb-2">Built in public</h3>
+          <p class="text-sm text-slate-400">
+            Every experiment is open-source on GitHub and deployed to GitHub
+            Pages so you can poke at it live.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-yellow-400 font-mono text-sm mb-2">03</div>
+          <h3 class="font-semibold mb-2">From PHP to JS</h3>
+          <p class="text-sm text-slate-400">
+            Six years of Laravel, now translating that backend muscle into the
+            modern JavaScript stack.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
