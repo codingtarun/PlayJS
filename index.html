@@ -3,105 +3,238 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PlayJS — Tarun's JavaScript Playground</title>
+    <title>Ubuntu 24.04.2</title>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body
-    class="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-yellow-300 selection:text-slate-900"
+    class="font-sans h-screen overflow-hidden ubuntu-wallpaper text-white select-none"
   >
-    <!-- Nav -->
-    <header
-      class="sticky top-0 z-50 backdrop-blur bg-slate-950/70 border-b border-slate-800"
+    <!-- ============ LOGIN SCREEN (overlays everything until dismissed) ============ -->
+    <div
+      id="login-screen"
+      class="absolute inset-0 bg-[#1e1e1e] z-100 flex flex-col transition-opacity duration-500"
     >
-      <nav
-        class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4"
+      <!-- Login top panel -->
+      <header
+        class="h-6 bg-black/40 flex items-center justify-between px-2 text-[11px]"
       >
-        <a href="/" class="font-mono text-lg font-bold tracking-tight">
-          <span class="text-yellow-400">{</span> PlayJS
-          <span class="text-yellow-400">}</span>
-        </a>
-        <ul class="hidden sm:flex items-center gap-8 text-sm text-slate-300">
-          <li>
-            <a href="#about" class="hover:text-yellow-400 transition">About</a>
-          </li>
-          <li>
-            <a href="#projects" class="hover:text-yellow-400 transition"
-              >Projects</a
+        <span></span>
+        <span class="flex items-center gap-3 font-medium">
+          <span id="login-date">Apr 3</span>
+          <span id="login-time">17:13</span>
+        </span>
+        <div class="flex items-center h-full">
+          <button class="px-1.5 h-full grid place-items-center hover:bg-white/10" title="Accessibility">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="4" r="2" />
+              <path d="M19 13v-2a1 1 0 00-1-1h-4v-2h-4v2H6a1 1 0 00-1 1v2a1 1 0 001 1h4v3l-2 5h2l1.5-4h1L13 22h2l-2-5v-3h4a1 1 0 001-1z" />
+            </svg>
+          </button>
+          <button class="px-1.5 h-full grid place-items-center hover:bg-white/10" title="Sound">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+            </svg>
+          </button>
+          <button class="px-1.5 h-full grid place-items-center hover:bg-white/10" title="Network">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3C7.79 3 3.93 4.5.96 7l1.41 1.41C5.04 6.27 8.39 5 12 5s6.96 1.27 9.63 3.41L23.04 7C20.07 4.5 16.21 3 12 3zm0 4c-2.84 0-5.43.96-7.5 2.57l1.41 1.41C7.51 9.7 9.65 9 12 9s4.49.7 6.09 1.98l1.41-1.41C17.43 7.96 14.84 7 12 7zm0 8l-2 2 2 2 2-2-2-2z" />
+            </svg>
+          </button>
+          <button class="px-1.5 h-full grid place-items-center hover:bg-white/10" title="Power">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42A6.92 6.92 0 0119 12a7 7 0 11-14 0 6.92 6.92 0 012.59-5.41L6.17 5.17A8.93 8.93 0 003 12a9 9 0 0018 0 8.93 8.93 0 00-3.17-6.83z" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Login body -->
+      <div class="flex-1 flex flex-col items-center justify-center px-4">
+        <!-- Avatar -->
+        <button
+          id="login-avatar"
+          class="w-28 h-28 rounded-full bg-neutral-700/80 grid place-items-center hover:bg-neutral-600 transition mb-4 ring-1 ring-white/5"
+          title="Click to log in"
+        >
+          <svg class="w-16 h-16 text-white/90" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="9" r="4" />
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6v1H4z" />
+          </svg>
+        </button>
+
+        <!-- Username -->
+        <p class="text-lg text-white mb-6">Tarun</p>
+
+        <!-- Password row: back arrow + input -->
+        <form id="login-form" class="flex items-center gap-3">
+          <button
+            type="button"
+            class="w-8 h-8 rounded-full bg-neutral-700/70 hover:bg-neutral-600 grid place-items-center text-white/70"
+            title="Back"
+          >
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+          </button>
+          <div class="relative">
+            <input
+              id="login-password"
+              type="password"
+              placeholder="Password"
+              autofocus
+              class="w-72 h-10 rounded-lg bg-transparent border-2 border-ubuntu-orange text-white placeholder-white/40 px-4 pr-10 text-sm outline-none focus:border-ubuntu-orange"
+            />
+            <button
+              type="button"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white"
+              title="Show password"
             >
-          </li>
-          <li>
-            <a
-              href="https://github.com/codingtarun/PlayJS"
-              class="hover:text-yellow-400 transition"
-              >GitHub</a
-            >
-          </li>
-        </ul>
-      </nav>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-4 text-[11px] text-white/40">
+          Press <kbd class="px-1.5 py-0.5 bg-white/10 rounded text-white/70">Enter</kbd> to log in (no password required)
+        </p>
+      </div>
+
+      <!-- Ubuntu branding bottom-center -->
+      <div class="pb-10 flex flex-col items-center gap-2 relative">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-md bg-ubuntu-orange grid place-items-center">
+            <svg viewBox="0 0 64 64" class="w-9 h-9">
+              <circle cx="32" cy="32" r="28" fill="#2c001e" />
+              <circle cx="32" cy="10" r="5" fill="#fff" />
+              <circle cx="51" cy="42" r="5" fill="#fff" />
+              <circle cx="13" cy="42" r="5" fill="#fff" />
+              <circle cx="32" cy="32" r="11" fill="none" stroke="#fff" stroke-width="3" />
+            </svg>
+          </div>
+          <span class="text-3xl font-light text-white">Ubuntu</span>
+        </div>
+        <!-- Settings cog bottom-right -->
+        <button
+          class="absolute right-4 bottom-4 w-9 h-9 rounded-full bg-neutral-700/70 hover:bg-neutral-600 grid place-items-center"
+          title="Settings"
+        >
+          <svg class="w-4 h-4 text-white/80" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.61-.22l-2.49 1a7.03 7.03 0 00-1.69-.98l-.38-2.65A.5.5 0 0014 2h-4a.5.5 0 00-.5.42l-.38 2.65c-.61.25-1.17.58-1.69.98l-2.49-1a.5.5 0 00-.61.22l-2 3.46a.5.5 0 00.12.64L4.57 11c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65a.5.5 0 00-.12.64l2 3.46a.5.5 0 00.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65A.5.5 0 0010 22h4a.5.5 0 00.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1a.5.5 0 00.61-.22l2-3.46a.5.5 0 00-.12-.64zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============ TOP PANEL ============ -->
+    <header
+      class="absolute top-0 inset-x-0 h-6 bg-black/85 flex items-center justify-between px-2 text-[11px] z-50"
+    >
+      <!-- Left: workspace dots / activities trigger -->
+      <button
+        class="px-2 h-full flex items-center gap-1 hover:bg-white/10 transition"
+        title="Activities"
+      >
+        <span class="w-1 h-1 rounded-full bg-white/90"></span>
+        <span class="w-1 h-1 rounded-full bg-white/40"></span>
+      </button>
+
+      <!-- Center: date + time -->
+      <button
+        id="clock"
+        class="px-3 h-full flex items-center gap-3 hover:bg-white/10 transition"
+        title="Calendar"
+      >
+        <span id="date">Feb 20</span>
+        <span id="time">13:39</span>
+      </button>
+
+      <!-- Right: accessibility, sound, system menu -->
+      <div class="flex items-center h-full">
+        <button class="px-1.5 h-full grid place-items-center hover:bg-white/10" title="Accessibility">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="4" r="2" />
+            <path d="M19 13v-2a1 1 0 00-1-1h-4v-2h-4v2H6a1 1 0 00-1 1v2a1 1 0 001 1h4v3l-2 5h2l1.5-4h1L13 22h2l-2-5v-3h4a1 1 0 001-1z" />
+          </svg>
+        </button>
+        <button class="px-1.5 h-full grid place-items-center hover:bg-white/10" title="Sound">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+          </svg>
+        </button>
+        <button class="px-1.5 h-full grid place-items-center hover:bg-white/10" title="System">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42A6.92 6.92 0 0119 12a7 7 0 11-14 0 6.92 6.92 0 012.59-5.41L6.17 5.17A8.93 8.93 0 003 12a9 9 0 0018 0 8.93 8.93 0 00-3.17-6.83z" />
+          </svg>
+        </button>
+      </div>
     </header>
 
-    <!-- Hero -->
-    <section class="max-w-6xl mx-auto px-6 pt-24 pb-20 text-center">
-      <p class="font-mono text-sm text-yellow-400 mb-4">
-        // learning in public
-      </p>
-      <h1
-        class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight"
-      >
-        A living playground <br class="hidden sm:block" />
-        for <span class="text-yellow-400">JavaScript</span>.
-      </h1>
-      <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed">
-        Hi, I'm Tarun — a Laravel developer leveling up into full-stack Node +
-        React. PlayJS is where I build, break, and document one small thing at a
-        time.
-      </p>
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href="#projects"
-          class="px-6 py-3 rounded-lg bg-yellow-400 text-slate-900 font-semibold hover:bg-yellow-300 transition"
-        >
-          Browse Projects
-        </a>
-        <a
-          href="https://github.com/codingtarun/PlayJS"
-          class="px-6 py-3 rounded-lg border border-slate-700 hover:border-yellow-400 hover:text-yellow-400 transition"
-        >
-          View on GitHub →
-        </a>
-      </div>
-    </section>
+    <!-- ============ DOCK (left) ============ -->
+    <aside
+      class="absolute left-0 top-6 bottom-0 w-[58px] bg-black/40 flex flex-col items-center pt-2 pb-2 z-40"
+    >
+      <!-- App icons -->
+      <div class="flex flex-col gap-1.5 items-center">
+        <button class="dock-icon" data-app="firefox" title="Firefox Web Browser">
+          <img src="/icons/firefox.png" alt="Firefox" class="dock-tile" />
+          <span class="dock-indicator"></span>
+        </button>
 
-    <!-- About -->
-    <section id="about" class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="text-3xl font-bold mb-6">What is PlayJS?</h2>
-      <div class="grid sm:grid-cols-3 gap-6">
-        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
-          <div class="text-yellow-400 font-mono text-sm mb-2">01</div>
-          <h3 class="font-semibold mb-2">One branch per day</h3>
-          <p class="text-sm text-slate-400">
-            Each topic or mini-app lives on its own
-            <span class="font-mono text-slate-300">day_N</span> branch — small,
-            focused, shippable.
-          </p>
-        </div>
-        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
-          <div class="text-yellow-400 font-mono text-sm mb-2">02</div>
-          <h3 class="font-semibold mb-2">Built in public</h3>
-          <p class="text-sm text-slate-400">
-            Every experiment is open-source on GitHub and deployed to GitHub
-            Pages so you can poke at it live.
-          </p>
-        </div>
-        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
-          <div class="text-yellow-400 font-mono text-sm mb-2">03</div>
-          <h3 class="font-semibold mb-2">From PHP to JS</h3>
-          <p class="text-sm text-slate-400">
-            Six years of Laravel, now translating that backend muscle into the
-            modern JavaScript stack.
-          </p>
-        </div>
+        <button class="dock-icon" data-app="thunderbird" title="Thunderbird Mail">
+          <img src="/icons/thunderbird.png" alt="Thunderbird" class="dock-tile" />
+        </button>
+
+        <button class="dock-icon" data-app="files" title="Files">
+          <img src="/icons/files.png" alt="Files" class="dock-tile" />
+        </button>
+
+        <button class="dock-icon" data-app="rhythmbox" title="Rhythmbox">
+          <img src="/icons/rhythmbox.png" alt="Rhythmbox" class="dock-tile" />
+        </button>
+
+        <button class="dock-icon" data-app="writer" title="LibreOffice Writer">
+          <img src="/icons/writer.png" alt="LibreOffice Writer" class="dock-tile" />
+        </button>
+
+        <button class="dock-icon" data-app="store" title="App Center">
+          <img src="/icons/store.png" alt="App Center" class="dock-tile" />
+        </button>
       </div>
-    </section>
+
+      <!-- Spacer pushes Ubuntu logo to the bottom -->
+      <div class="flex-1"></div>
+
+      <!-- Ubuntu logo at the very bottom = Show Applications -->
+      <button class="dock-icon" data-app="apps" title="Show Applications">
+        <span class="dock-tile bg-transparent">
+          <svg viewBox="0 0 64 64" class="w-full h-full">
+            <circle cx="32" cy="32" r="28" fill="#2c001e" />
+            <!-- Circle of friends — 3 dots on a ring -->
+            <circle cx="32" cy="10" r="5" fill="#e95420" />
+            <circle cx="51" cy="42" r="5" fill="#e95420" />
+            <circle cx="13" cy="42" r="5" fill="#e95420" />
+            <circle cx="32" cy="32" r="11" fill="none" stroke="#e95420" stroke-width="3" />
+          </svg>
+        </span>
+      </button>
+    </aside>
+
+    <!-- ============ HOME WORKSPACE WIDGET (bottom right) ============ -->
+    <div
+      class="absolute bottom-3 right-3 flex flex-col items-center gap-0.5 z-30"
+    >
+      <div
+        class="w-14 h-9 rounded-md bg-white/20 backdrop-blur-sm border border-white/15 grid place-items-center shadow-md"
+      >
+        <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 3l9 8h-3v9h-4v-6H10v6H6v-9H3z" />
+        </svg>
+      </div>
+      <span class="text-[10px] text-white/85 tracking-wide">Home</span>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
